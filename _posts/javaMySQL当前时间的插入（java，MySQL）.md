@@ -1,0 +1,101 @@
+## javaMySQL当前时间的插入（java，MySQL）
+
+
+### 1.MySQL数据库中数据类型的选择和操作
+
+建表时数据类型可以选择`datetime`数据类型，
+例如可以建立一个表，并插入几条简单的数据：
+
+```sql
+CREATE TABLE `datetest` (
+  `_id` int(11) NOT NULL AUTO_INCREMENT,
+  `_dateTime` datetime DEFAULT NULL,
+  PRIMARY KEY (`_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+
+insert into `datetest` (`_id`, `_dateTime`) values('1','2017-12-13 22:05:11');
+insert into `datetest` (`_id`, `_dateTime`) values('2','2017-12-14 22:05:59');
+insert into `datetest` (`_id`, `_dateTime`) values('3','2017-12-12 22:06:04');
+
+```
+
+在数据库中是如此显示的：
+
+![数据库内容][1]
+
+
+对应的查询操作：
+```sql
+
+select * from datetest order by _dateTime desc;
+
+select * from datetest order by _dateTime asc;
+
+```
+
+![desc排序：最新日期在前][2]
+
+![asc排序：最旧日期在前][3]
+
+
+
+
+### 2. Java实现向表中插入一条时间数据
+
+#### 2.1 java获取当前时间戳
+```java
+Date date = new Date();
+Timestamp timeStamp = new Timestamp(date.getTime());
+//System.out.println(timeStamp);
+```
+**注意导入的包**：
+不要导错包哦。
+```java
+import java.sql.Timestamp;
+import java.util.Date;
+```
+
+
+
+#### 2.2 java插入信息到数据库
+
+Junit测试：
+源代码：
+
+- 要导入的包
+```java
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Timestamp;
+import java.util.Date;
+import org.junit.Test;
+```
+
+- 测试模块
+``` java
+	@Test
+	public void insertCurrentTime() throws Exception{
+		String driver="com.mysql.jdbc.Driver";
+		String dbName="jdbc:mysql:///test";//数据库名为“Test”
+		String user="root";
+		String passwd="12345678";
+		Class.forName(driver);
+		
+		String sql="insert into datetest(_dateTime)values(?)";		
+		PreparedStatement ps=DriverManager.getConnection(dbName,user,passwd).prepareStatement(sql);
+		
+		Date date = new Date();
+		Timestamp timeStamp = new Timestamp(date.getTime());
+		//System.out.println(timeStamp);
+		
+		ps.setTimestamp(1, timeStamp);		
+		ps.execute();		
+	}
+```
+
+运行上述代码，即可以向数据库中插入当前时间。
+
+
+  [1]: ./images/1513237898843.jpg
+  [2]: ./images/1513238166161.jpg
+  [3]: ./images/1513238248264.jpg
