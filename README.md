@@ -1,5 +1,7 @@
 # 我的博客
 博客更新列表
+## 20180302
+- [Linux(Ubuntu)使用日记------为程序添加桌面快捷方式](http://www.cnblogs.com/hwtblog/p/8495262.html)
 ## 20180301
 - [Linux(Ubuntu)使用日记------tenserflow安装（pip安装法）](http://www.cnblogs.com/hwtblog/p/8486657.html)
 ## 20180228
