@@ -1,5 +1,7 @@
 # 我的博客
 博客更新列表
+## 20180307
+- [Linux(Ubuntu)使用日记------Mongodb的安装与使用](http://www.cnblogs.com/hwtblog/p/8523305.html)
 ## 20180305
 - [Linux(Ubuntu)使用日记------trash-cli防止误删文件](http://www.cnblogs.com/hwtblog/p/8508747.html)
 ## 20180302
