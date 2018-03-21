@@ -3,6 +3,7 @@
 ## 20180321
 - [java基础----正则表达式](http://www.cnblogs.com/hwtblog/p/8616417.html)
 - [Linux(Ubuntu)使用日记------部署JavaWeb项目到服务器](http://www.cnblogs.com/hwtblog/p/8404579.html)
+- [Linux(Ubuntu)使用日记------Mysql编码(utf-8)的设置](http://www.cnblogs.com/hwtblog/p/8535320.html)
 ## 20180307
 - [Linux(Ubuntu)使用日记------Mongodb的安装与使用](http://www.cnblogs.com/hwtblog/p/8523305.html)
 ## 20180305
