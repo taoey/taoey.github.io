@@ -1,6 +1,7 @@
 # 我的博客
 博客更新列表
 ## 20180321
+- 更新：[Linux(Ubuntu 16) 下Java开发环境的配置(二)------Tomcat的配置及常见问题](http://www.cnblogs.com/hwtblog/p/8404579.html)
 - [java基础----正则表达式](http://www.cnblogs.com/hwtblog/p/8616417.html)
 - [Linux(Ubuntu)使用日记------部署JavaWeb项目到服务器](http://www.cnblogs.com/hwtblog/p/8404579.html)
 - [Linux(Ubuntu)使用日记------Mysql编码(utf-8)的设置](http://www.cnblogs.com/hwtblog/p/8535320.html)
