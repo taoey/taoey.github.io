@@ -1,5 +1,7 @@
 # 我的博客
 博客更新列表
+## 20180425
+- [http://www.cnblogs.com/hwtblog/p/8932932.html](Linux(Ubunt)使用日记------常用软件汇总(不定时更新))
 ## 20180407
 - [Linux(Ubuntu)使用日记------markdown文档转化为word文档](http://www.cnblogs.com/hwtblog/p/8735218.html)
 ## 20180321
