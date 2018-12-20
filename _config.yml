@@ -8,10 +8,10 @@ title: Hello World ！
 subtitle: "JUST DO IT."
 description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
 keywords: taoey, 黄为涛
-favicon: /favicon1.ico
+favicon: /favicon.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
-side_bar_repo_limit: 5
+side_bar_repo_limit: 3
 
 # ---------------- #
 #      Author      #
