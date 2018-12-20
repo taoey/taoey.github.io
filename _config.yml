@@ -4,10 +4,10 @@
 baseurl:
 url:
 date_format: "ordinal"
-title: no error,no warning!
+title: Hello World ！
 subtitle: "JUST DO IT."
 description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
-keywords: handx, DeXing Han, 韩非子, 爱码士,handexing
+keywords: taoey, 黄为涛
 favicon: /favicon1.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
@@ -16,12 +16,12 @@ side_bar_repo_limit: 5
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: DeXing Han
+author: 黄为涛
 organization: XXXX公司
-organization_url: https://github.com/handexing
-github_username: handexing
-location: Shanghai, China
-email: 908716835@qq.com
+organization_url: https://github.com/taoey
+github_username: taoey
+location: 北京, China
+email: hwt8080@163.com
 
 # ---------------- #
 #    Navigation    #
@@ -87,10 +87,6 @@ repository: handexing/handexing.github.io
 comments_provider: netease_gentie
 # !!!重要!!! 请修改下面这些信息为你自己申请的
 # !!!Important!!! Please modify infos below to yours
-disqus_username: handx
-netease_gentie_key: c41f12c4d50f4a17b95ec77464ece34d
-# 在使用网易云跟帖时可点击显示 Disqus
-lazy_load_disqus : true
 
 # ---------------- #
 #    Analytics     #
