@@ -1,3 +1,11 @@
+---
+layout: post
+title: Java BigDecimal详解
+categories: [java]
+description: Java BigDecimal详解
+keywords: java,BigDecimal
+---
+
 # [Java BigDecimal详解](https://www.cnblogs.com/LeoBoy/p/6056394.html)
 
 原文地址：http://www.cnblogs.com/LeoBoy/p/6056394.html
