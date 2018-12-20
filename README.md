@@ -1,44 +1,6 @@
-# 我的博客
-博客更新列表
-## 20180426
-- [Java 中的接口有什么作用？](https://www.zhihu.com/question/20111251/answer/376998027)
-## 20180425
-- [Linux(Ubunt)使用日记------常用软件汇总(不定时更新)](http://www.cnblogs.com/hwtblog/p/8932932.html)
-## 20180407
-- [Linux(Ubuntu)使用日记------markdown文档转化为word文档](http://www.cnblogs.com/hwtblog/p/8735218.html)
-## 20180321
-- 更新：[Linux(Ubuntu 16) 下Java开发环境的配置(二)------Tomcat的配置及常见问题](http://www.cnblogs.com/hwtblog/p/8404579.html)
-- [java基础----正则表达式](http://www.cnblogs.com/hwtblog/p/8616417.html)
-- [Linux(Ubuntu)使用日记------部署JavaWeb项目到服务器](http://www.cnblogs.com/hwtblog/p/8404579.html)
-- [Linux(Ubuntu)使用日记------Mysql编码(utf-8)的设置](http://www.cnblogs.com/hwtblog/p/8535320.html)
-## 20180307
-- [Linux(Ubuntu)使用日记------Mongodb的安装与使用](http://www.cnblogs.com/hwtblog/p/8523305.html)
-## 20180305
-- [Linux(Ubuntu)使用日记------trash-cli防止误删文件](http://www.cnblogs.com/hwtblog/p/8508747.html)
-## 20180302
-- [Linux(Ubuntu)使用日记------为程序添加桌面快捷方式](http://www.cnblogs.com/hwtblog/p/8495262.html)
-## 20180301
-- [Linux(Ubuntu)使用日记------tenserflow安装（pip安装法）](http://www.cnblogs.com/hwtblog/p/8486657.html)
-## 20180228
-- [json文件格式详解](http://www.cnblogs.com/hwtblog/p/8483573.html)
-## 20180227
-- [Linux(Ubuntu)使用日记------ssh远程登录腾讯云](http://www.cnblogs.com/hwtblog/p/8479631.html)
-## 20180824
-电脑终于修好了，又可以写博客记录了，开心
-- [Linux(Ubuntu)使用日记------vim复制内容到其他应用](http://www.cnblogs.com/hwtblog/p/8466207.html)
-- [Linux(Ubuntu)使用日记------自定义命令的使用](http://www.cnblogs.com/hwtblog/p/8466428.html)
+# Taoey.github.com 
 
-## 20180210
-- [Linux(Ubuntu)使用日记(七)------终端控制器Terminator安装使用](http://www.cnblogs.com/hwtblog/p/8438030.html)
-## 20180208
-- [Linux(Ubuntu)使用日记(三)------git安装使用](http://www.cnblogs.com/hwtblog/p/8431332.html)
-- [Linux(Ubuntu)使用日记(四)------印象笔记相关使用](http://www.cnblogs.com/hwtblog/p/8422561.html)
-- [Linux(Ubuntu)使用日记(零)------使用Linux的理由](http://www.cnblogs.com/hwtblog/p/8412767.html)
-## 20180202
-- [Linux(Ubuntu 16) 下Java开发环境的配置(三)------Mysql配置](http://www.cnblogs.com/hwtblog/p/8406057.html)
-- [Linux(Ubuntu 16) 下Java开发环境的配置(二)------Tomcat的配置](http://www.cnblogs.com/hwtblog/p/8404579.html)
-- [Linux(Ubuntu 16) 下Java开发环境的配置(一)------JDK的配置](http://www.cnblogs.com/hwtblog/p/8404473.html)
+> 觉得不错的朋友可以点下star,watch,fork也算是对我的鼓励了。
 
-## 20180130
-- [SpringMVC学习手册(一)------工作原理解析](http://www.cnblogs.com/hwtblog/p/8386614.html)
-- [SpringMVC学习手册(三)------EL和JSTL(上)](http://www.cnblogs.com/hwtblog/p/8386630.html)
+
+

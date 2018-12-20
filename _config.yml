@@ -1,1 +1,99 @@
-theme: jekyll-theme-cayman
+# ---------------- #
+#   Main Configs   #
+# ---------------- #
+baseurl:
+url:
+date_format: "ordinal"
+title: no error,no warning!
+subtitle: "JUST DO IT."
+description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
+keywords: handx, DeXing Han, 韩非子, 爱码士,handexing
+favicon: /favicon1.ico
+timezone: Asia/Shanghai
+encoding: "utf-8"
+side_bar_repo_limit: 5
+
+# ---------------- #
+#      Author      #
+# ---------------- #
+author: DeXing Han
+organization: XXXX公司
+organization_url: https://github.com/handexing
+github_username: handexing
+location: Shanghai, China
+email: 908716835@qq.com
+
+# ---------------- #
+#    Navigation    #
+# ---------------- #
+navs:
+  -
+    href: /
+    label: 首页
+
+  -
+    href: /categories/
+    label: 分类
+
+  -
+    href: /wiki/
+    label: 维基
+
+  -
+    href: /links/
+    label: 链接
+
+  -
+    href: /about/
+    label: 关于
+
+# ---------------- #
+#       RSS        #
+# ---------------- #
+subscribe_rss: /feed.xml
+
+# ---------------- #
+#      Jekyll      #
+# ---------------- #
+markdown: kramdown
+kramdown:
+    input: GFM
+highlighter: rouge
+paginate: 8
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+gems:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
+#     - jekyll-mentions
+collections:
+    wiki:
+        output: true
+        permalink: /wiki/:path/
+
+repository: handexing/handexing.github.io
+
+# ---------------- #
+#      Comments    #
+# ---------------- #
+# support provider: disqus, netease_gentie
+comments_provider: netease_gentie
+# !!!重要!!! 请修改下面这些信息为你自己申请的
+# !!!Important!!! Please modify infos below to yours
+disqus_username: handx
+netease_gentie_key: c41f12c4d50f4a17b95ec77464ece34d
+# 在使用网易云跟帖时可点击显示 Disqus
+lazy_load_disqus : true
+
+# ---------------- #
+#    Analytics     #
+# ---------------- #
+google:
+    analytics_id: UA-80669434-1
