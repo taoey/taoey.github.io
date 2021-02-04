@@ -12,9 +12,6 @@ permalink: /about/
 
 ## 联系我
 - 邮箱：hwt8080@163.com
-<!-- {% for website in site.data.social %}
-* {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
-{% endfor %} -->
 
 ## 技能
 
