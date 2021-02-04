@@ -14,12 +14,8 @@ keywords: golang,GMP
 
 原文地址：https://mp.weixin.qq.com/s/SEPP56sr16bep4C_S0TLgA
 
-# Golang调度器GMP原理与调度全分析（刘丹冰）
-
-
 
 ## 一、Glang“调度器”的由来
-
 
 
 ### （1）单进程时代不需要调度器
