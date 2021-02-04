@@ -4,10 +4,10 @@
 baseurl:
 url:
 date_format: "ordinal"
-title: Hello World ！
-subtitle: "JUST DO IT."
+title: 进击de豆子
+subtitle: "专注于后端技术 golang，python，redis，mysql，docker"
 description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
-keywords: taoey, 黄为涛
+keywords: 豆仔gogo
 favicon: /favicon.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
@@ -16,7 +16,7 @@ side_bar_repo_limit: 3
 # ---------------- #
 #      Author      #
 # ---------------- #
-author: 黄为涛
+author: 进击de豆子
 organization: XXXX公司
 organization_url: https://github.com/taoey
 github_username: taoey
@@ -78,7 +78,7 @@ collections:
         output: true
         permalink: /wiki/:path/
 
-repository: handexing/handexing.github.io
+repository: taoey/taoey.github.io/
 
 # ---------------- #
 #      Comments    #
