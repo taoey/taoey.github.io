@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Golang调度器GMP原理与调度
+title: Golang调度器GMP原理与调度(刘丹冰)
 categories: [goalng]
 description: golang-GMP模型
 keywords: golang,GMP
@@ -26,7 +26,7 @@ keywords: golang,GMP
 
 
 
-##### 我们知道，一切的软件都是跑在操作系统上，真正用来干活(计算)的是CPU。早期的操作系统每个程序就是一个进程，知道一个程序运行完，才能进行下一个进程，就是“单进程时代”我们知道，一切的软件都是跑在操作系统上，真正用来干活(计算)的是CPU。早期的操作系统每个程序就是一个进程，知道一个程序运行完，才能进行下一个进程，就是“单进程时代”，
+我们知道，一切的软件都是跑在操作系统上，真正用来干活(计算)的是CPU。早期的操作系统每个程序就是一个进程，知道一个程序运行完，才能进行下一个进程，就是“单进程时代”我们知道，一切的软件都是跑在操作系统上，真正用来干活(计算)的是CPU。早期的操作系统每个程序就是一个进程，知道一个程序运行完，才能进行下一个进程，就是“单进程时代”，
 
  一切的程序只能串行发生。
 
@@ -52,8 +52,7 @@ keywords: golang,GMP
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018403)
 
 
-
-##### 在多进程/多线程的操作系统中，就解决了阻塞的问题，因为一个进程阻塞cpu可以立刻切换到其他进程中去执行，而且调度cpu的算法可以保证在运行的进程都可以被分配到cpu的运行时间片。这样从宏观来看，似乎多个进程是在同时被运行。
+在多进程/多线程的操作系统中，就解决了阻塞的问题，因为一个进程阻塞cpu可以立刻切换到其他进程中去执行，而且调度cpu的算法可以保证在运行的进程都可以被分配到cpu的运行时间片。这样从宏观来看，似乎多个进程是在同时被运行。
 
 但新的问题就又出现了，进程拥有太多的资源，进程的创建、切换、销毁，都会占用很长的时间，CPU虽然利用起来了，但如果进程过多，**CPU有很大的一部分都被用来进行进程调度了**。
 
@@ -151,7 +150,7 @@ M个协程绑定1个线程，是N:1和1:1类型的结合，克服了以上2种�
 
 
 
-#####   Go为了提供更容易使用的并发方法，使用了goroutine和channel。goroutine来自协程的概念，让一组可复用的函数运行在一组线程之上，即使有协程阻塞，该线程的其他协程也可以被`runtime`调度，转移到其他可运行的线程上。最关键的是，程序员看不到这些底层的细节，这就降低了编程的难度，提供了更容易的并发。
+Go为了提供更容易使用的并发方法，使用了goroutine和channel。goroutine来自协程的概念，让一组可复用的函数运行在一组线程之上，即使有协程阻塞，该线程的其他协程也可以被`runtime`调度，转移到其他可运行的线程上。最关键的是，程序员看不到这些底层的细节，这就降低了编程的难度，提供了更容易的并发。
 
 ​    Go中，协程被称为goroutine，它非常轻量，一个goroutine只占几KB，并且这几KB就足够goroutine运行完，这就能在有限的内存空间内支持大量goroutine，支持了更多的并发。虽然一个goroutine的栈只占几KB，但实际是可伸缩的，如果需要更多内容，`runtime`会自动为goroutine分配。
 
@@ -206,7 +205,7 @@ Processor，它包含了运行goroutine的资源，如果线程想运行goroutin
 
 ### （1）GMP模型 
 
-#####     在Go中，线程是运行goroutine的实体，调度器的功能是把可运行的goroutine分配到工作线程上。
+在Go中，线程是运行goroutine的实体，调度器的功能是把可运行的goroutine分配到工作线程上。
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018407)
 
@@ -318,7 +317,7 @@ M与P的数量没有绝对关系，一个M阻塞，P就会去创建或者切换�
 
 
 
-##### ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
 
 1、我们通过 go func()来创建一个goroutine
 
@@ -346,13 +345,7 @@ M与P的数量没有绝对关系，一个M阻塞，P就会去创建或者切换�
 
 ### （4）"go func()"调度过程
 
-
-
-
-
-
-
-##### ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
 
 
@@ -423,14 +416,6 @@ func main() {
 
 
 调度器的生命周期几乎占满了一个Go程序的一生，`runtime.main`的goroutine执行之前都是为调度器做准备工作，`runtime.main`的goroutine运行，才是调度器的真正开始，直到`runtime.main`结束而结束。
-
-
-
-
-
-
-
-
 
 
 
@@ -611,9 +596,7 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 
 
-
 ### 场景3
-
 
 
 
@@ -624,9 +607,6 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
-
-
-#####  
 
 
 
