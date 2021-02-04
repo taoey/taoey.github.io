@@ -4,7 +4,7 @@
 baseurl:
 url:
 date_format: "ordinal"
-title: 进击de豆子
+title: 豆仔gogo
 subtitle: "专注后端知识"
 description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
 keywords: 豆仔gogo
@@ -17,7 +17,7 @@ side_bar_repo_limit: 3
 #      Author      #
 # ---------------- #
 author: 进击de豆子
-organization: 无
+organization: gopher
 organization_url: https://github.com/taoey
 github_username: taoey
 location: 北京, China
