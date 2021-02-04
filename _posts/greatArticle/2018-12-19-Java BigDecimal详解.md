@@ -28,7 +28,7 @@ public static void main(String[] args)
 
 运行结果如下
 
-![img](https://github.com/Taoey/Taoey.github.io/blob/master/_posts/greatArticle/assets/1010052-20161112110906311-2138412408.png)
+![img](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/assets/1010052-20161112110906311-2138412408.png)
 
    你认为你看错了，但结果却是是这样的。问题在哪里呢？原因在于我们的计算机是二进制的。浮点数没有办法是用二进制进行精确表示。我们的CPU表示浮点数由两个部分组成：指数和尾数，这样的表示方法一般都会失去一定的精确度，有些浮点数运算也会产生一定的误差。如：2.4的二进制表示并非就是精确的2.4。反而最为接近的二进制表示是 2.3999999999999999。浮点数的值实际上是由一个特定的数学公式计算得到的。
 
