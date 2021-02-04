@@ -1,8 +1,8 @@
 ---
 layout: page
 title: 关于
-description: 有时候阳光很好，有时候阳光很暗，这就是生活。
-keywords: handx, handexing
+description: 
+keywords: taoey
 comments: true
 menu: 关于
 permalink: /about/
@@ -16,7 +16,7 @@ permalink: /about/
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
 {% endfor %}
 
-## Skill Keywords
+## 技能
 
 {% for category in site.data.skills %}
 ### {{ category.name }}

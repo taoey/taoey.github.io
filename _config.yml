@@ -5,7 +5,7 @@ baseurl:
 url:
 date_format: "ordinal"
 title: 进击de豆子
-subtitle: "this is my life"
+subtitle: "专注后端知识"
 description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
 keywords: 豆仔gogo
 favicon: /favicon.ico
@@ -17,7 +17,7 @@ side_bar_repo_limit: 3
 #      Author      #
 # ---------------- #
 author: 进击de豆子
-organization: 北京雷石
+organization: 无
 organization_url: https://github.com/taoey
 github_username: taoey
 location: 北京, China
