@@ -1,11 +1,9 @@
 - name: Software Engineer Keywords
   keywords:
-      - Java
+      - Golang
       - Python
-      - Mybatis
       - 并发
       - Redis
       - MySQL
-      - springboot
-      - spring
+      - Nginx
       
