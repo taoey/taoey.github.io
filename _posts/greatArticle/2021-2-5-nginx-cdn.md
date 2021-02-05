@@ -1,3 +1,11 @@
+---
+layout: post
+title: 基于Nginx的多级文件缓存系统设计
+categories: [nginx,nginx]
+description: 基于Nginx的多级文件缓存系统设计
+keywords: nginx,nginx
+---
+
 ## 一、系统架构
 
 ### 1、系统整体原理架构图
