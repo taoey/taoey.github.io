@@ -11,7 +11,7 @@ permalink: /wiki/
 > 那些平凡的日子，也很美丽
 
 <ul class="listing">
-{% for wiki in site.wiki reversed  %}
+{% for wiki in site.wiki | site.wiki.title reversed  %}
 {% if wiki.title != "Wiki Template" %}
 <li class="listing-item"><a href="{{ wiki.url }}">{{ wiki.title }}</a></li>
 {% endif %}
