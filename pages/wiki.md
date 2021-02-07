@@ -11,8 +11,7 @@ permalink: /wiki/
 > 那些平凡的日子，也很美丽
 
 <ul class="listing">
-{% assign sorted_wiki = site.wiki | sort %}
-{% for wiki in sorted_wiki   %}
+{% for wiki in site.wiki reversed  %}
 {% if wiki.title != "Wiki Template" %}
 <li class="listing-item"><a href="{{ wiki.url }}">{{ wiki.title }}</a></li>
 {% endif %}
