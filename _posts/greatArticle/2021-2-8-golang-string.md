@@ -6,6 +6,7 @@ description: golang-string底层分析
 keywords: golang,string
 ---
 
+前言：string不可修改、内存拷贝、[]byte数组
 
 
 ## 一、使用
