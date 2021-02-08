@@ -13,7 +13,7 @@ keywords: golang,string
 
 普通字符串分割 
 
-```
+```go
 tempString :="aa_bb"
 splitArray := strings.Split(tempString, "_")
 ```
@@ -22,7 +22,7 @@ splitArray := strings.Split(tempString, "_")
 
 自定义分割步数(最后一个参数含义：最后分割的数组的长度)
 
-```
+```go
 tempString :="aa_bb_cc"
 strings.SplitN(tempString, "_", 2)
 ```
@@ -33,7 +33,7 @@ strings.SplitN(tempString, "_", 2)
 
 Go标准库`builtin`给出了所有内置类型的定义。 源代码位于`src/builtin/builtin.go`，其中关于string的描述如下:
 
-```
+```go
 // string is the set of all strings of 8-bit bytes, conventionally but not
 // necessarily representing UTF-8-encoded text. A string may be empty, but
 // not nil. Values of string type are immutable.
@@ -51,7 +51,7 @@ type string string
 
 源码包`src/runtime/string.go:stringStruct`定义了string的数据结构：
 
-```
+```go
 type stringStruct struct {
     str unsafe.Pointer
     len int
@@ -71,7 +71,7 @@ string数据结构跟切片有些类似，只不过切片还有一个表示容�
 
 如下代码所示，可以声明一个string变量变赋予初值：
 
-```
+```go
 var str string
 str = "Hello World"
 ```
@@ -80,7 +80,7 @@ str = "Hello World"
 
 字符串构建过程是先跟据字符串构建stringStruct，再转换成string。转换的源码如下：
 
-```
+```go
 func gostringnocopy(str *byte) string { // 跟据字符串地址构建string
     ss := stringStruct{str: unsafe.Pointer(str), len: findnull(str)} // 先构造stringStruct
     s := *(*string)(unsafe.Pointer(&ss))                             // 再将stringStruct转换成string
@@ -116,7 +116,7 @@ func GetStringBySlice(s []byte) string {
 
 string也可以方便的转成byte切片，如下所示：
 
-```
+```go
 func GetSliceByString(str string) []byte {
     return []byte(str)
 }
@@ -135,7 +135,7 @@ string转换成byte切片，也需要一次内存拷贝，其过程如下：
 
 字符串可以很方便的拼接，像下面这样：
 
-```
+```go
 str := "Str1" + "Str2" + "Str3"
 ```
 
@@ -145,7 +145,7 @@ str := "Str1" + "Str2" + "Str3"
 
 字符串拼接伪代码如下：
 
-```
+```go
 func concatstrings(a []string) string { // 字符串拼接
     length := 0        // 拼接后总的字符串长度
     for _, str := range a {
@@ -165,7 +165,7 @@ func concatstrings(a []string) string { // 字符串拼接
 
 rawstring()源代码如下：
 
-```
+```go
 func rawstring(size int) (s string, b []byte) { // 生成一个新的string，返回的string和切片共享相同的空间
     p := mallocgc(uintptr(size), nil, false)
     stringStructOf(&s).str = p
