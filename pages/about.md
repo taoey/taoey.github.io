@@ -11,7 +11,7 @@ permalink: /about/
 长风破浪会有时，直挂云帆济沧海。
 
 ## 联系我
-- 邮箱：hwt8080@163.com
+- 邮箱：taoeyhuang@gmail.com
 
 ## 技能
 
