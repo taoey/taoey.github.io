@@ -21,7 +21,7 @@ keywords: redis,集群
 
 ## 1. redis  安装
 
-- redis安装步骤同smartrtb平台部署文档中redis安装步骤，三台主机安装步骤相同
+- redis安装步骤同mysoft平台部署文档中redis安装步骤，三台主机安装步骤相同
 
 - 配置文件在主从配置中进行配置
 
@@ -41,11 +41,11 @@ firewall-cmd --reload
 
 | IP地址        | 端口号 | 角色           | 密码         |
 | ------------- | ------ | -------------- | ------------ |
-| 192.168.3.189 | 6379   | 主机（master） | smartrtb2win |
-| 192.168.3.190 | 6379   | 从机（slave）  | smartrtb2win |
-| 192.168.3.191 | 6379   | 从机（slave）  | smartrtb2win |
+| 192.168.3.189 | 6379   | 主机（master） | mypassword |
+| 192.168.3.190 | 6379   | 从机（slave）  | mypassword |
+| 192.168.3.191 | 6379   | 从机（slave）  | mypassword |
 
-- 主机（master）redis.conf配置,使用vi /smartrtb/redis/redis.conf 进行修改
+- 主机（master）redis.conf配置,使用vi /mysoft/redis/redis.conf 进行修改
 
 ~~~
 //Redis 默认只允许本机访问，把 bind 修改为 0.0.0.0 表示允许所有远程访问
@@ -59,17 +59,17 @@ daemonize：yes
 //pid文件路径
 pidfile /var/run/redis.pid
 //redis日志文件
-logfile /smartrtb/redis/log/redis.log
+logfile /mysoft/redis/log/redis.log
 //数据库内容存放目录
-dir /smartrtb/redis/data
+dir /mysoft/redis/data
 //redis连接密码
-requirepass：smartrtb2win
+requirepass：mypassword
 //slave 服务连接master的密码
-masterauth：smartrtb2win
+masterauth：mypassword
 //开启aof持久化方式
 apendonly yes
 ~~~
-- 从机（slave）redis.conf配置,使用vi /smartrtb/redis/redis.conf 进行修改
+- 从机（slave）redis.conf配置,使用vi /mysoft/redis/redis.conf 进行修改
 
 ~~~
 bind: 0.0.0.0
@@ -77,10 +77,10 @@ protected-mode no
 port: 6379
 daemonize：yes
 pidfile /var/run/redis.pid
-logfile /smartrtb/redis/log/redis.log
-dir /smartrtb/redis/data
-requirepass：smartrtb2win
-masterauth：smartrtb2win
+logfile /mysoft/redis/log/redis.log
+dir /mysoft/redis/data
+requirepass：mypassword
+masterauth：mypassword
 //当指定本机为slave服务时， 设置 master 服务的IP地址及端口，在 redis 启动的时候会自动跟 master 进行数据同步，所以两台从机都这样配置即可。5.0版本之后为replicaof。
 slaveof 192.168.231.130 6379 
 appendonly yes
@@ -89,8 +89,8 @@ appendonly yes
 - 当主从节点的配置文件配置好后，重启redis服务，通过redis-cli 工具分别查看三台机器的信息
 
 ~~~
-#cd /smartrtb/redis/src
-#redis-cli -p 6379 -a smartrtb2win
+#cd /mysoft/redis/src
+#redis-cli -p 6379 -a mypassword
 >info replication
 ~~~
 
@@ -131,7 +131,7 @@ appendonly yes
   //指定主机IP地址和端口，并且指定当有2台哨兵认为主机挂了，则对主机进行容灾切换。
   sentinel monitor mymaster 192.168.3.189 2
   //当在Redis实例中开启了requirepass，这里就需要提供密码。
-  sentinel auth-pass mymaster smartrtb2win
+  sentinel auth-pass mymaster mypassword
   //这里设置了主机多少秒无响应，则认为挂了。
   sentinel down-after-milliseconds mymaster 3000
   //主备切换时，最多有多少个slave同时对新的master进行同步，这里设置为默认的1。
@@ -146,20 +146,20 @@ appendonly yes
   start_sentienl.sh
   
   #!/bin/bash
-  /smartrtb/redis/src/redis-sentinel /smartrtb/redis/sentinel.conf
+  /mysoft/redis/src/redis-sentinel /mysoft/redis/sentinel.conf
   echo "sentinel started"
   
   stop_sentinel.sh
   
   #!/bin/bash
-  /smartrtb/redis/src/redis-cli -p 26379 -a smartrtb2win shutdown
+  /mysoft/redis/src/redis-cli -p 26379 -a mypassword shutdown
   echo "sentinel stoped"
   ~~~
 
 - 通过启动脚本启动三个哨兵，使用如下命令查看哨兵信息
 
   ~~~shell
-  #/smartrtb/redis/src/redis-cli -p 26379
+  #/mysoft/redis/src/redis-cli -p 26379
   >info sentine
   ~~~
 
