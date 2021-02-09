@@ -26,7 +26,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 全量数据，单机Redis节点无法满足要求，按照分区规则把数据分到若干个子集当中
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/774371-20190704142443495-657525295.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/774371-20190704142443495-657525295.png)
 
 ### 2.2 常用数据分布方式之顺序分布
 
@@ -35,7 +35,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 1号到33号数据保存到节点1上，34号到66号数据保存到节点2上，67号到100号数据保存到节点3上
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/774371-20190704142458004-1492690779.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/774371-20190704142458004-1492690779.png)
 
 > 顺序分区常用在关系型数据库的设计
 
@@ -45,7 +45,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 例如1到100个数字，对每个数字进行哈希运算，然后对每个数的哈希结果除以节点数进行取余，余数为1则保存在第1个节点上，余数为2则保存在第2个节点上，余数为0则保存在第3个节点，这样可以保证数据被打散，同时保证数据分布的比较均匀
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173316044-111183011.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173316044-111183011.png)
 
 哈希分布方式分为三个分区方式：
 
@@ -53,7 +53,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 比如有100个数据，对每个数据进行hash运算之后，与节点数进行取余运算，根据余数不同保存在不同的节点上
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173326412-1822327250.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173326412-1822327250.png)
 
 节点取余方式是非常简单的一种分区方式
 
@@ -61,7 +61,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 > 节点取余分区方式建议使用多倍扩容的方式，例如以前用3个节点保存数据，扩容为比以前多一倍的节点即6个节点来保存数据，这样只需要适移50%的数据。数据迁移之后，第一次无法从缓存中读取数据，必须先从数据库中读取数据，然后回写到缓存中，然后才能从缓存中读取迁移之后的数据
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173336747-1673966639.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173336747-1673966639.png)
 
 节点取余方式优点：
 
@@ -85,15 +85,15 @@ Redis Cluster是Redis官方提供的Redis集群功能
 将所有的数据当做一个token环，token环中的数据范围是0到2的32次方。然后为每一个数据节点分配一个token范围值，这个节点就负责保存这个范围内的数据。
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173356124-1016731228.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173356124-1016731228.png)
 
 ```
 对每一个key进行hash运算，被哈希后的结果在哪个token的范围内，则按顺时针去找最近的节点，这个key将会被保存在这个节点上。
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173404739-1007977005.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173404739-1007977005.png)
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173411531-183289257.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173411531-183289257.png)
 
 ```
 在上面的图中，有4个key被hash之后的值在在n1节点和n2节点之间，按照顺时针规则，这4个key都会被保存在n2节点上，
@@ -124,7 +124,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 > Redis Cluster中预设虚拟槽的范围为0到16383
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173424090-1936846535.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173424090-1936846535.png)
 
 步骤：
 
@@ -153,7 +153,7 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 #### 2.3 顺序分布与哈希分布的对比
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173436521-719668637.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173436521-719668637.png)
 
 ## 3.Redis Cluster基本架构
 
@@ -169,7 +169,7 @@ Redis Cluster是分布式架构：即Redis Cluster中有多个节点，每个节
 
 meet操作是节点之间完成相互通信的基础，meet操作有一定的频率和规则
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173608325-1809944413.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173608325-1809944413.png)
 
 ### 3.3 分配槽
 
@@ -177,15 +177,15 @@ meet操作是节点之间完成相互通信的基础，meet操作有一定的频
 
 由于每个节点之间都彼此通信，每个节点都知道另外节点负责管理的槽范围
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173506943-656215359.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173506943-656215359.png)
 
 客户端访问任意节点时，对数据key按照CRC16规则进行hash运算，然后对运算结果对16383进行取作，如果余数在当前访问的节点管理的槽范围内，则直接返回对应的数据
 
 如果不在当前节点负责管理的槽范围内，则会告诉客户端去哪个节点获取数据，由客户端去正确的节点获取数据
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173628442-1759433146.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173628442-1759433146.png)
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173637265-984512111.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173637265-984512111.png)
 
 ### 3.4 复制
 
@@ -206,13 +206,13 @@ meet操作是节点之间完成相互通信的基础，meet操作有一定的频
 6.客户端向目标节点发送命令，获取命令执行结果
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173651666-1863525873.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173651666-1863525873.png)
 
 需要注意的是：客户端不会自动找到目标节点执行命令
 
 槽命中：直接返回
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173702243-1050038981.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173702243-1050038981.png)
 
 ```
 [root@mysql ~]# redis-cli -p 9002 cluster keyslot hello
@@ -226,7 +226,7 @@ meet操作是节点之间完成相互通信的基础，meet操作有一定的频
 (integer) 9244
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173713886-2024280701.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173713886-2024280701.png)
 
 ```
 [root@mysql ~]# redis-cli -c -p 9002
@@ -259,7 +259,7 @@ OK
 
 #### 3.5.2 ask重定向
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173742168-2092868404.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173742168-2092868404.png)
 
 在对集群进行扩容和缩容时，需要对槽及槽中数据进行迁移
 
@@ -267,7 +267,7 @@ OK
 
 如果此时正在进行集群扩展或者缩空操作，当客户端向正确的节点发送命令时，槽及槽中数据已经被迁移到别的节点了，就会返回ask，这就是ask重定向机制
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173806627-1735185965.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173806627-1735185965.png)
 
 步骤：
 
@@ -306,7 +306,7 @@ JedisCluster会重新初始化slot与node节点的缓存关系，然后向新的
 如果命令发送次数超过5次，则抛出异常"Too many cluster redirection!"
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173832929-817589066.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173832929-817589066.png)
 
 ### 3.6 多节点命令实现
 
@@ -320,7 +320,7 @@ JedisCluster会重新初始化slot与node节点的缓存关系，然后向新的
 
 定义for循环，遍历所有的key，分别去所有的Redis节点中获取值并进行汇总，简单，但是效率不高，需要n次网络时间
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173842162-140757673.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173842162-140757673.png)
 
 #### 3.6.2 串行IO
 
@@ -328,23 +328,23 @@ JedisCluster会重新初始化slot与node节点的缓存关系，然后向新的
 
 本地已经缓存了槽与节点的对应关系，然后对key按节点进行分组，成立子集，然后使用pipeline把命令发送到对应的node，需要nodes次网络时间，大大减少了网络时间开销
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173854067-697276824.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173854067-697276824.png)
 
 #### 3.6.3 并行IO
 
 并行IO是对串行IO的一个优化，把key分组之后，根据节点数量启动对应的线程数，根据多线程模式并行向node节点请求数据，只需要1次网络时间
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173908402-1524322433.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173908402-1524322433.png)
 
 #### 3.6.4 hash_tag
 
 将key进行hash_tag的包装，然后把tag用大括号括起来，保证所有的key只向一个node请求数据，这样执行类似mget命令只需要去一个节点获取数据即可，效率更高
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173919180-92218255.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173919180-92218255.png)
 
 #### 3.6.5 四种优化方案优缺点分析
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173936256-290379346.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173936256-290379346.png)
 
 ### 3.7 故障发现
 
@@ -367,7 +367,7 @@ ping/pong不仅能传递节点与槽的对应消息，也能传递其他状态�
 4.如果节点1发现与节点2最后通信时间超过node-timeout，则把节点2标识为pfail状态
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173946714-700297693.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173946714-700297693.png)
 
 #### 3.7.2 客观下线
 
@@ -384,9 +384,9 @@ ping/pong不仅能传递节点与槽的对应消息，也能传递其他状态�
 
 > 故障列表的周期为：集群的node-timeout * 2，保证以前的故障消息不会对周期内的故障消息造成影响，保证客观下线的公平性和有效性
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173956048-817167341.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173956048-817167341.png)
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027174002279-818812119.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027174002279-818812119.png)
 
 ### 3.8 故障恢复
 
@@ -406,7 +406,7 @@ cluster-node-timeout默认为15秒，cluster-slave-validity-factor默认值为10
 使偏移量最大的从节点具备优先级成为主节点的条件
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027174013055-1564035725.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027174013055-1564035725.png)
 
 #### 3.8.3 选举投票
 
@@ -414,7 +414,7 @@ cluster-node-timeout默认为15秒，cluster-slave-validity-factor默认值为10
 对选举出来的多个从节点进行投票，选出新的主节点
 ```
 
-![image]https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/(2021-2-9-redis集群--redis-cluster.assets/1133627-20181027174022694-1531606344.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027174022694-1531606344.png)
 
 #### 3.8.4 替换主节点
 
