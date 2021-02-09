@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Golang调度器GMP原理与调度(刘丹冰)
+title: golang调度器GMP原理与调度(刘丹冰)
 categories: [golang]
 description: golang-GMP模型
 keywords: golang,GMP

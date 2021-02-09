@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 【转】MySQL MVVC多版本并发控制原理
+title: MySQL MVVC多版本并发控制原理
 categories: [mysql]
 description: MySQL MVVC多版本并发控制原理
 keywords: mysql,mvvc
