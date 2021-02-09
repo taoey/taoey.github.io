@@ -41,9 +41,9 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 ### 2.3 常用数据分布方式之哈希分布
 
-```
+
 例如1到100个数字，对每个数字进行哈希运算，然后对每个数的哈希结果除以节点数进行取余，余数为1则保存在第1个节点上，余数为2则保存在第2个节点上，余数为0则保存在第3个节点，这样可以保证数据被打散，同时保证数据分布的比较均匀
-```
+
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173316044-111183011.png)
 
@@ -81,34 +81,34 @@ Redis Cluster是Redis官方提供的Redis集群功能
 
 一致性哈希原理：
 
-```
+
 将所有的数据当做一个token环，token环中的数据范围是0到2的32次方。然后为每一个数据节点分配一个token范围值，这个节点就负责保存这个范围内的数据。
-```
+
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173356124-1016731228.png)
 
-```
+
 对每一个key进行hash运算，被哈希后的结果在哪个token的范围内，则按顺时针去找最近的节点，这个key将会被保存在这个节点上。
-```
+
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173404739-1007977005.png)
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173411531-183289257.png)
 
-```
+
 在上面的图中，有4个key被hash之后的值在在n1节点和n2节点之间，按照顺时针规则，这4个key都会被保存在n2节点上，
 如果在n1节点和n2节点之间添加n5节点，当下次有key被hash之后的值在n1节点和n5节点之间，这些key就会被保存在n5节点上面了
 在上面的例子里，添加n5节点之后，数据迁移会在n1节点和n2节点之间进行，n3节点和n4节点不受影响，数据迁移范围被缩小很多
 同理，如果有1000个节点，此时添加一个节点，受影响的节点范围最多只有千分之2
 一致性哈希一般用在节点比较多的时候
-```
+
 
 一致性哈希分区优点：
 
-```
+
 采用客户端分片方式：哈希 + 顺时针(优化取余)
 节点伸缩时，只影响邻近节点，但是还是有数据迁移
-```
+
 
 一致性哈希分区缺点：
 
@@ -197,14 +197,14 @@ meet操作是节点之间完成相互通信的基础，meet操作有一定的频
 
 #### 3.5.1 moved重定向
 
-```
-1.每个节点通过通信都会共享Redis Cluster中槽和集群中对应节点的关系
-2.客户端向Redis Cluster的任意节点发送命令，接收命令的节点会根据CRC16规则进行hash运算与16383取余，计算自己的槽和对应节点
-3.如果保存数据的槽被分配给当前节点，则去槽中执行命令，并把命令执行结果返回给客户端
-4.如果保存数据的槽不在当前节点的管理范围内，则向客户端返回moved重定向异常
-5.客户端接收到节点返回的结果，如果是moved异常，则从moved异常中获取目标节点的信息
-6.客户端向目标节点发送命令，获取命令执行结果
-```
+
+- 每个节点通过通信都会共享Redis Cluster中槽和集群中对应节点的关系
+- 客户端向Redis Cluster的任意节点发送命令，接收命令的节点会根据CRC16规则进行hash运算与16383取余，计算自己的槽和对应节点
+- 如果保存数据的槽被分配给当前节点，则去槽中执行命令，并把命令执行结果返回给客户端
+- 如果保存数据的槽不在当前节点的管理范围内，则向客户端返回moved重定向异常
+- 客户端接收到节点返回的结果，如果是moved异常，则从moved异常中获取目标节点的信息
+- 客户端向目标节点发送命令，获取命令执行结果
+
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173651666-1863525873.png)
 
@@ -295,16 +295,16 @@ ask异常：槽还在迁移中
 
 读写数据时的注意事项：
 
-```
-每个JedisPool中缓存了slot和节点node的关系
-key和slot的关系：对key进行CRC16规则进行hash后与16383取余得到的结果就是槽
-JedisCluster启动时，已经知道key,slot和node之间的关系，可以找到目标节点
-JedisCluster对目标节点发送命令，目标节点直接响应给JedisCluster
-如果JedisCluster与目标节点连接出错，则JedisCluster会知道连接的节点是一个错误的节点
-此时JedisCluster会随机节点发送命令，随机节点返回moved异常给JedisCluster
-JedisCluster会重新初始化slot与node节点的缓存关系，然后向新的目标节点发送命令，目标命令执行命令并向JedisCluster响应
-如果命令发送次数超过5次，则抛出异常"Too many cluster redirection!"
-```
+
+- 每个JedisPool中缓存了slot和节点node的关系
+- key和slot的关系：对key进行CRC16规则进行hash后与16383取余得到的结果就是槽
+- JedisCluster启动时，已经知道key,slot和node之间的关系，可以找到目标节点
+- JedisCluster对目标节点发送命令，目标节点直接响应给JedisCluster
+- 如果JedisCluster与目标节点连接出错，则JedisCluster会知道连接的节点是一个错误的节点
+- 此时JedisCluster会随机节点发送命令，随机节点返回moved异常给JedisCluster
+- JedisCluster会重新初始化slot与node节点的缓存关系，然后向新的目标节点发送命令，目标命令执行命令并向JedisCluster响应
+- 如果命令发送次数超过5次，则抛出异常"Too many cluster redirection!"
+
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173832929-817589066.png)
 
@@ -360,12 +360,12 @@ ping/pong不仅能传递节点与槽的对应消息，也能传递其他状态�
 
 主观下线流程：
 
-```
-1.节点1定期发送ping消息给节点2
-2.如果发送成功，代表节点2正常运行，节点2会响应PONG消息给节点1，节点1更新与节点2的最后通信时间
-3.如果发送失败，则节点1与节点2之间的通信异常判断连接，在下一个定时任务周期时，仍然会与节点2发送ping消息
-4.如果节点1发现与节点2最后通信时间超过node-timeout，则把节点2标识为pfail状态
-```
+
+- 节点1定期发送ping消息给节点2
+- 如果发送成功，代表节点2正常运行，节点2会响应PONG消息给节点1，节点1更新与节点2的最后通信时间
+- 如果发送失败，则节点1与节点2之间的通信异常判断连接，在下一个定时任务周期时，仍然会与节点2发送ping消息
+- 如果节点1发现与节点2最后通信时间超过node-timeout，则把节点2标识为pfail状态
+
 
 ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-9-redis集群--redis-cluster.assets/1133627-20181027173946714-700297693.png)
 
@@ -377,10 +377,10 @@ ping/pong不仅能传递节点与槽的对应消息，也能传递其他状态�
 
 客观下线流程：
 
-```
-1.某个节点接收到其他节点发送的ping消息，如果接收到的ping消息中包含了其他pfail节点，这个节点会将主观下线的消息内容添加到自身的故障列表中，故障列表中包含了当前节点接收到的每一个节点对其他节点的状态信息
-2.当前节点把主观下线的消息内容添加到自身的故障列表之后，会尝试对故障节点进行客观下线操作
-```
+
+- 某个节点接收到其他节点发送的ping消息，如果接收到的ping消息中包含了其他pfail节点，这个节点会将主观下线的消息内容添加到自身的故障列表中，故障列表中包含了当前节点接收到的每一个节点对其他节点的状态信息
+- 当前节点把主观下线的消息内容添加到自身的故障列表之后，会尝试对故障节点进行客观下线操作
+
 
 > 故障列表的周期为：集群的node-timeout * 2，保证以前的故障消息不会对周期内的故障消息造成影响，保证客观下线的公平性和有效性
 
@@ -392,13 +392,13 @@ ping/pong不仅能传递节点与槽的对应消息，也能传递其他状态�
 
 #### 3.8.1 资格检查
 
-```
-对从节点的资格进行检查，只有难过检查的从节点才可以开始进行故障恢复
-每个从节点检查与故障主节点的断线时间
-超过cluster-node-timeout * cluster-slave-validity-factor数字，则取消资格
-cluster-node-timeout默认为15秒，cluster-slave-validity-factor默认值为10
-如果这两个参数都使用默认值，则每个节点都检查与故障主节点的断线时间，如果超过150秒，则这个节点就没有成为替换主节点的可能性
-```
+
+- 对从节点的资格进行检查，只有难过检查的从节点才可以开始进行故障恢复
+- 每个从节点检查与故障主节点的断线时间
+- 超过cluster-node-timeout * cluster-slave-validity-factor数字，则取消资格
+- cluster-node-timeout默认为15秒，cluster-slave-validity-factor默认值为10
+- 如果这两个参数都使用默认值，则每个节点都检查与故障主节点的断线时间，如果超过150秒，则这个节点就没有成为替换主节点的可能性
+
 
 #### 3.9.2 准备选举时间
 
