@@ -62,5 +62,19 @@
           s.parentNode.insertBefore(hm, s);
         })();
     </script>
+    <!-- 回到顶端插件 -->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.goup.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          $.goup({
+              trigger: 100,
+              bottomOffset: 150,
+              locationOffset: 100,
+              title: 'TOP',
+              titleAsText: true
+          });
+      });
+    </script>
 </body>
 </html>
