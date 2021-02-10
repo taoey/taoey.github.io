@@ -59,6 +59,14 @@ mySlice := []int{10, 20, 30}
 ```
 
 
+创建二维数组
+
+```go
+arr := make([][]int, m)
+for i := 0; i < m; i++ {
+    arr[i] = make([]int, n)
+}
+```
 
 ## 三、nil切片和空切片
 
