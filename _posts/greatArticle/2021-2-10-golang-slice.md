@@ -6,6 +6,7 @@ description: golang-slice使用及底层原理分析
 keywords: golang,slice
 ---
 
+前言：内部实现、初始化、nil切片和空切片、切片内存分析、子切片、拷贝、扩容、切片传递
 
 
 ## 一、内部实现
