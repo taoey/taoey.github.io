@@ -8,6 +8,7 @@ keywords: golang,string
 
 前言：string不可修改、内存拷贝、[]byte数组
 
+参考资料：https://www.mdeditor.tw/pl/2MWe
 
 ## 一、使用
 
