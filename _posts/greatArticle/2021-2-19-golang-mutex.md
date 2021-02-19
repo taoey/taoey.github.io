@@ -35,7 +35,7 @@ func main() {
 
 这种模式下，直接将等待队列队头`goroutine`解锁`goroutine`；新来的`gorountine`也不会尝试获得锁，而是直接插入到等待队列队尾。
 
-![图片](2021-2-19-golang-mutex.assets/640.webp)
+![图片](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-19-golang-mutex.assets/640.webp)
 
 mutex mode
 
@@ -59,7 +59,7 @@ state代表了当前锁的状态、 是否是存在自旋、是否是饥饿模�
  mutexWaiterShift = iota
 ```
 
-![图片](2021-2-19-golang-mutex.assets/640-1613700831489.webp)
+![图片](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-19-golang-mutex.assets/640-1613700831489.webp)
 
 mutex state
 
