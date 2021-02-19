@@ -1,8 +1,8 @@
 ---
 layout: post
-title: golang-Mutex使用及原理分析
+title: golang-mutex使用及原理分析
 categories: [golang]
-description: golang-Mutex使用及原理分析
+description: golang mutex使用及原理分析
 keywords: golang,mutex,锁
 ---
 
