@@ -6,7 +6,7 @@ description: golang-redis连接池内存泄露分析
 keywords: golang,redis,内存泄露,连接池
 ---
 
-前言：
+前言：使用goroution时时刻需要注意是否可能会发生内存泄露情况
 
 下面这段代码是一段redis初始化连接的代码，在初始化过程中我们增加了心跳检测协程，防止连接的自动关闭，同时需要加一个channel，监听退出事件
 
