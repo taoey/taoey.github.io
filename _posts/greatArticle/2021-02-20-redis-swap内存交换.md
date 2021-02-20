@@ -56,6 +56,7 @@ root      2370     1  0 Jul20 ?        00:20:18 src/redis-server 127.0.0.1:21244
 root      2371     1  0 Jul20 ?        00:20:13 src/redis-server 127.0.0.1:21263
 root      7815  5781  0 23:39 pts/3    00:00:00 grep --color=auto redis
 root     14804     1  0 Jul20 ?        00:20:39 redis-server *:6379
+ 
 我们以14804这个redis进程为例
 [root@VM-0-14-centos ~]# cat /proc/14804/smaps | grep Swap
 Swap:                  0 kB
