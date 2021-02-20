@@ -78,7 +78,17 @@ Swap:                  0 kB
 
 ```javascript
 echo vm.swappiness={value} >> /etc/sysctl.conf
+sysctl -p
 ```
+
+例如：
+
+```
+echo vm.swappiness=100 >> /etc/sysctl.conf
+sysctl -p
+```
+
+
 
 Redis在不同版本下，对于swapiness的建议配置也不一样，通常情况下，swapness的值可以设置为：0、1、60、100这几个。
 
