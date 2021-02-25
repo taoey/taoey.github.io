@@ -22,9 +22,107 @@ keywords: golang,goroutine,context,超时
 
 
 
-
-
 上代码：
 
+```go
+package main
 
+import (
+	"context"
+	"fmt"
+	"runtime"
+	"time"
+)
+
+const(
+	TIME_OUT_SECOND = 5
+)
+
+
+func FindNum(arr []int,target int)  {
+	ctx, cancelFunc := context.WithTimeout(context.Background(), time.Second * TIME_OUT_SECOND)
+	defer cancelFunc()
+
+	// 确定goroution个数
+	goroutineNum := runtime.NumCPU()
+	exitChan := make(chan int)
+	if len(arr) < goroutineNum{
+		go subFindNum(ctx,arr,target,exitChan)
+	}else{
+		// 子切片划分
+		subLength := len(arr) / goroutineNum
+		for i := 0; i <goroutineNum; i++ {
+			index := i
+			var subArr []int
+			if index == goroutineNum - 1{ //剩余元素都归到最后一个切片中
+				subArr = arr[index*subLength:]
+			}else{
+				subArr = arr[index*subLength:(index+1)*subLength]
+			}
+			go subFindNum(ctx,subArr,target,exitChan)
+		}
+	}
+	select {
+	case <-ctx.Done():
+		fmt.Println("timeout")
+		return
+	case <-exitChan:
+		fmt.Println("find it")
+		return
+	}
+	return
+}
+
+// 子切片查询，选用了最简单的遍历排序，可以使用排序和二分查找优化
+func subFindNum(ctx context.Context ,subArr []int,targetNum int, exitChan chan int) {
+	for _, val := range subArr{
+		select {
+		case <-ctx.Done():
+			return
+		default:
+		}
+		if val == targetNum{
+			exitChan <- 1
+			return
+		}
+	}
+}
+
+func main() {
+	maxNum := 100000
+	arr := make([]int,maxNum)
+	for i:=0;i<maxNum;i++{
+		arr[i] = i
+	}
+	targetNum := 1000
+	FindNum(arr,targetNum)
+}
+
+```
+
+
+
+我们添加一些调试代码，看一下goroutine是否进行了关闭，修改defer部分的代码，改成如下：
+
+```go
+defer func() {
+    fmt.Println("cancel before",runtime.NumGoroutine())
+    cancelFunc()
+    time.Sleep(time.Second)
+    fmt.Println("cancel after",runtime.NumGoroutine())
+}()
+
+```
+
+再次执行之前的程序，可以看到打印的日志：
+
+```
+current cpu num: 12
+current cpu num: 13
+find it
+cancel before 13
+cancel after 1
+```
+
+可以看到能够goroutine已经被关闭掉
 
