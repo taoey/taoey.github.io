@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 练习题-多并发goroutine的超时与取消
+title: 练习题-大数组并发查找问题
 categories: [golang]
 description: 练习题-多并发goroutine的超时与取消
 keywords: golang,goroutine,context,超时
