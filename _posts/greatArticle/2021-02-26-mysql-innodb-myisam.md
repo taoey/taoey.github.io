@@ -27,7 +27,7 @@ keywords: mysql,innodb,myisam
 
 我们可以通过SHOW ENGINES查看mysql的引擎，可以发现只有innodb支持事务，
 
-```mysql
+```sql
 mysql> SHOW ENGINES; -- 查看msyql引擎
 +--------------------+---------+----------------------------------------------------------------+--------------+------+------------+
 | Engine             | Support | Comment                                                        | Transactions | XA   | Savepoints |
