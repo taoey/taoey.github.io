@@ -43,6 +43,14 @@ def write(key, value):
 
 
 
+删除失败之后的重删机制：
+
+![image-20210304173633070](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-02-26-mysql-redis数据一致性.assets/image-20210304173633070.png)
+
+然而，该方案有一个缺点，对业务线代码造成大量的侵入
+
+
+
 ## 策略二、binlog+canal+MQ
 
 ![img](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-02-26-mysql-redis数据一致性.assets/1049928-78c959e0e4696330.webp)
@@ -78,4 +86,5 @@ MySQL binlog增量订阅消费+消息队列+增量数据更新到redis
 
 - [Redis和mysql数据怎么保持数据一致的？](https://juejin.cn/post/6844903805641818120)
 - [实现缓存最终一致性的两种方案](https://www.jianshu.com/p/fbe6a7928229?utm_source=oschina-app)
+- [分布式之数据库和缓存双写一致性方案解析](https://www.cnblogs.com/rjzheng/p/9041659.html?spm=a2c6h.12873639.0.0.2020fe8dbuaVRu)
 
