@@ -32,7 +32,9 @@ layout: default
     <article class="article-content markdown-body">
       <blockquote>
         如果文章图片无法显示，可尝试配置host：<a href="https://zhuanlan.zhihu.com/p/107196957">https://zhuanlan.zhihu.com/p/107196957</a><br>
-        或者访问原文进行阅读：<a href="{{ page.wxurl }}">{{ page.wxurl }}</a>
+        {% if page.wxurl %}
+          或者访问原文进行阅读：<a href="{{ page.wxurl }}">{{ page.wxurl }}</a>
+        {% endif %}
       </blockquote><hr>
     <!-- 文章内容 -->
     {{ content }}
