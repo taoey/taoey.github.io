@@ -12,8 +12,6 @@ keywords: golang,goroutine,context,超时
 >
 > 比如切片为：[23, 32, 78, 43, 76, 65, 345, 762, …… 915, 86]，查找的目标值为345，如果切片中存在目标值程序输出:"Found it!"并且立即取消仍在执行查找任务的goroutine。如果在超时时间未找到目标值程序输出:"Timeout! Not Found"，同时立即取消仍在执行查找任务的goroutine。
 
-
-
 解题思路：
 
 - 获取CPU个数，作为切片个数
