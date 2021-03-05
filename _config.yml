@@ -42,12 +42,15 @@ navs:
     href: /2021/
     label: 2021
   -
+    href: /go_learn/
+    label: go语言生态
+  -
     href: /links/
     label: 友链
 
-  -
-    href: /about/
-    label: 关于
+  # -
+  #   href: /about/
+  #   label: 关于
 
 # ---------------- #
 #       RSS        #
