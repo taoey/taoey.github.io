@@ -38,9 +38,9 @@ navs:
   -
     href: /wiki/
     label: 个人随笔
-    -
-      href: /2021/
-      label: 2021
+      -
+        href: /2021/
+        label: 2021
 
   -
     href: /links/
