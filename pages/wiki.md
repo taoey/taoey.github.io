@@ -10,10 +10,12 @@ permalink: /wiki/
 
 > 那些平凡的日子，也很美丽
 
-<!-- <ul class="listing">
+<ul class="listing">
 {% for wiki in site.wiki reversed  %}
 {% if wiki.title != "Wiki Template" %}
+{% if wiki.show != "false" %}
 <li class="listing-item"><a href="{{ wiki.url }}">{{ wiki.title }}</a></li>
 {% endif %}
+{% endif %}
 {% endfor %}
-</ul> -->
+</ul>

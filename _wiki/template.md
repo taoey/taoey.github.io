@@ -1,6 +1,7 @@
 ---
 layout: wiki
 title: Wiki Template
+show: false
 categories: wiki
 description: 
 keywords: 
