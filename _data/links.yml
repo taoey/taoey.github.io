@@ -1,5 +1,11 @@
-- name: taoey github
-  url: https://github.com/taoey
-
 - name: 学习计划看板
   url: https://github.com/Taoey/Taoey.github.io/projects/1?fullscreen=true
+
+- name: go语言中文网
+  url: https://studygolang.com/
+
+- name: golang长连接开源项目：zinx(aceId刘丹冰)
+  url: https://github.com/aceld/zinx
+
+- name: leetcode
+  url: https://leetcode-cn.com/problemset/all/

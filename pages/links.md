@@ -8,7 +8,7 @@ menu: 友链
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> 太阳强烈，水波温柔
 
 {% for link in site.data.links %}
 * [{{ link.name }}]({{ link.url }})
