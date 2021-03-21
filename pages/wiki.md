@@ -13,9 +13,9 @@ permalink: /wiki/
 <ul class="listing">
 {% for wiki in site.wiki reversed  %}
 {% if wiki.title != "Wiki Template" %}
-{% if wiki.show != "false" %}
-<li class="listing-item"><a href="{{ wiki.url }}">{{ wiki.title }}</a></li>
-{% endif %}
+    {% if wiki.show != false %}
+    <li class="listing-item"><a href="{{ wiki.url }}">{{ wiki.title }}</a></li>
+    {% endif %}
 {% endif %}
 {% endfor %}
 </ul>
