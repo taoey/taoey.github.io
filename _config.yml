@@ -35,13 +35,13 @@ navs:
     href: /categories/
     label: 分类
 
-  -
-    href: /poetry/
-    label: 诗歌
+  # -
+  #   href: /poetry/
+  #   label: 诗歌
 
-  -
-    href: /wiki/
-    label: 随笔
+  # -
+  #   href: /wiki/
+  #   label: 随笔
 
   # -
   #   href: /2021/
