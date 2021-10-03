@@ -83,6 +83,17 @@
       Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2xpc3Rfam9pbl9zY3JpcHQuaHRtbA", true);
       </script>
     {% endif %}
+    {% when 'utteranc' %}
+    <!-- utteranc评论插件 -->
+      <script src="https://utteranc.es/client.js"
+        repo="taoey/Taoey.github.io"
+        issue-term="title"
+        label="comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
+    {% endif %}
   {% endcase %}
 {% endif %}
 
@@ -107,13 +118,3 @@
 
 gitalk.render('gitalk-container')
 </script> -->
-
-<!-- utteranc评论插件 -->
-<script src="https://utteranc.es/client.js"
-        repo="taoey/taoey.github.io"
-        issue-term="url"
-        label="comment"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
