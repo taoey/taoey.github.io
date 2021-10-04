@@ -39,7 +39,7 @@ keywords: nginx,golang
 
 用户通过浏览器访问传统的（没有使用CDN）网站的过程如下
 
-![image-20210223164559844](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-20210223164559844.png)
+![image-20210223164559844](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-20210223164559844.png)
 
 1. 用户在浏览器中输入要访问的域名。
 2. 浏览器向DNS服务器请求对该域名的解析。
@@ -51,7 +51,7 @@ keywords: nginx,golang
 
 如果使用了CDN，则其过程会变成以下这样。  
 
-![image-20210223164628001](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-20210223164628001.png)
+![image-20210223164628001](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-20210223164628001.png)
 
 1. 用户在浏览器中输入要访问的域名
 2. 浏览器向DNS服务器请求对域名进行解析。由于CDN对[域名解析](https://cloud.tencent.com/product/cns?from=10680)进行了调整，DNS服务器会最终将域名的解析权交给CNAME指向的CDN专用DNS服务器
@@ -104,17 +104,17 @@ CDN选择策略如下（CDN掉线视为无CDN）
 
 ### 1、系统整体原理架构图
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image.png)
+![image.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image.png)
 
 ### 2、节点连接事件通信逻辑
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-1612519708685.png)
+![image.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-1612519708685.png)
 
 
 
 ### 3、配置更新事件通信逻辑
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-1612519708730.png)
+![image.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-1612519708730.png)
 
 
 
@@ -124,7 +124,7 @@ CDN选择策略如下（CDN掉线视为无CDN）
 
 目录结构为：
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-1612519708768.png)
+![image.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/image-1612519708768.png)
 
 nginx.conf主配置文件添加：
 
@@ -194,7 +194,7 @@ Nginx版本信息：1.16
 
 拟安装四个节点，其层级关系图如下，关于docker中涉及的具体的配置信息，可先参考后面Nginx配置
 
-![1570936576104.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/1592660893173-6b60bbd2-5605-41d0-b0f6-44f186b113d5.png)
+![1570936576104.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/1592660893173-6b60bbd2-5605-41d0-b0f6-44f186b113d5.png)
 
 
 
@@ -271,7 +271,7 @@ location /files/ {
 
 并将文件存放在：html目录下
 
-![1570935605616.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/1592660892231-029c92d6-2f32-4a5d-b031-22a47f39fd9c.png)
+![1570935605616.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-5-nginx-cdn.assets/1592660892231-029c92d6-2f32-4a5d-b031-22a47f39fd9c.png)
 
 文件访问地址:
 

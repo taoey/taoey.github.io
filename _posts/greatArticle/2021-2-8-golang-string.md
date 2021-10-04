@@ -111,7 +111,7 @@ func GetStringBySlice(s []byte) string {
 
 转换示意图：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-8-golang-string.assets/5cbe09e25309067f76a1036640e8b926823.jpg)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-8-golang-string.assets/5cbe09e25309067f76a1036640e8b926823.jpg)
 
 ### string转[]byte
 
@@ -130,7 +130,7 @@ string转换成byte切片，也需要一次内存拷贝，其过程如下：
 
 转换示意图：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-8-golang-string.assets/b1c76b0072439e25d60dbcad09fcec30ab9.jpg)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-8-golang-string.assets/b1c76b0072439e25d60dbcad09fcec30ab9.jpg)
 
 ### 字符串拼接
 

@@ -18,7 +18,7 @@ keywords: golang,cpu,缓存
 
 为了加速内存访问，处理器有着不同级别的缓存，分别是 L1、L2 和 L3。确切的体系结构可能因供应商、处理器模型等而异。目前最常见的架构是把 L1 和 L2 缓存内嵌在 CPU 核心本地，而把 L3 缓存设计成跨核心共享。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCJ6)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCJ6)
 
 
 
@@ -26,7 +26,7 @@ keywords: golang,cpu,缓存
 
 越靠近CPU核心的缓存，其容量越小，但是访问延迟越低。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCJ8)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCJ8)
 
 
 
@@ -44,7 +44,7 @@ L1的缓存行大小一般是64字节， L2和L3高速缓存行的大小大于�
 
 以本人的电脑为例，以下是系统报告
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKd)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKd)
 
 
 
@@ -122,7 +122,7 @@ BenchmarkMatrixReversedCombination-8              3     480798925 ns/op
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKf)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKf)
 
 
 
@@ -134,7 +134,7 @@ BenchmarkMatrixReversedCombination-8              3     480798925 ns/op
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKj)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKj)
 
 
 
@@ -150,7 +150,7 @@ BenchmarkMatrixReversedCombination-8              3     480798925 ns/op
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKn)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKn)
 
 
 
@@ -197,7 +197,7 @@ BenchmarkMatrixReversedCombination-8          57712         20404 ns/op
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKL)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKL)
 
 
 
@@ -245,7 +245,7 @@ BenchmarkMatrixReversedCombination-8                      3     480904016 ns/op
 
 假设有一个双核CPU，两个核心上并行运行着不同的线程，它们同时从内存中读取两个不同的数据A和B，如果这两个数据在物理内存上是连续的（或者非常接近），那么就会出现在两个核心的L1 Cache中均存在var1和var2的情况。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKX)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCKX)
 
 
 
@@ -274,25 +274,25 @@ MESI的四个独立字母是代表Cache line的四个状态，每个缓存行只
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCK1)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCK1)
 
 
 
 假设线程1首先读取数据A，因为按缓存行读取，且A和B在物理内存上是相邻的，所以数据B也会被加载到Core 1的缓存行中，此时将此缓存行标记为**Exclusive**状态。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCK5)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCK5)
 
 
 
 接着线程2读取数据B，它从内存中取出了数据A和数据B到缓存行中。由于在Core 1中已经存在当前数据的缓存行，那么此时处理器会将这两个缓存行标记为**Shared**状态。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCK7)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCK7)
 
 
 
 Core1 上的线程1要修改数据A，它发现当前缓存行的状态是**Shared**，所以它会先通过数据总线发送消息给Core 2，通知Core 2将对应的缓存行标记为**Invalid**，然后再修改数据A，同时将Core 1上当前缓存行标记为**Modified**
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCLf)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCLf)
 
 
 
@@ -402,7 +402,7 @@ func BenchmarkStructurePadding(b *testing.B) {
 
 在CPU Cache中，内存分布应该如下图所示，因为两个变量之间有足够多的内存填充，所以它们只会存在于不同CPU核心的缓存行。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCLn)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-golang-cpu.assets/bVcNCLn)
 
 
 

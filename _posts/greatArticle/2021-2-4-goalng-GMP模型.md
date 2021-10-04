@@ -26,7 +26,7 @@ keywords: golang,GMP
 
  一切的程序只能串行发生。
 
-   ![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018402)
+   ![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018402)
 
 早期的单进程操作系统，面临2个问题：
 
@@ -45,7 +45,7 @@ keywords: golang,GMP
 
 ### （2）多进程/线程时代有了调度器需求
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018403)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018403)
 
 
 在多进程/多线程的操作系统中，就解决了阻塞的问题，因为一个进程阻塞cpu可以立刻切换到其他进程中去执行，而且调度cpu的算法可以保证在运行的进程都可以被分配到cpu的运行时间片。这样从宏观来看，似乎多个进程是在同时被运行。
@@ -62,7 +62,7 @@ keywords: golang,GMP
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018400)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018400)
 
 
 
@@ -90,13 +90,13 @@ keywords: golang,GMP
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640)
 
 
 
 这样，我们再去细化去分类一下，内核线程依然叫“线程(thread)”，用户线程叫“协程(co-routine)".
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018108)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018108)
 
 ​    
 
@@ -110,13 +110,13 @@ N个协程绑定1个线程，优点就是协程在用户态线程即完成切换
 
 
 
-缺点:：某个程序用不了硬件的多核加速能力，![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640)**一旦某协程阻塞**，造成线程阻塞，本进程的其他协程都无法执行了，无并发能力
+缺点:：某个程序用不了硬件的多核加速能力，![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640)**一旦某协程阻塞**，造成线程阻塞，本进程的其他协程都无法执行了，无并发能力
 
 
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
 
 
@@ -128,7 +128,7 @@ N个协程绑定1个线程，优点就是协程在用户态线程即完成切换
 
 缺点：协程的创建、删除和切换的代价都由CPU完成，有点略显昂贵了。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018400)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018400)
 
 #### M:N关系
 
@@ -136,7 +136,7 @@ M个协程绑定1个线程，是N:1和1:1类型的结合，克服了以上2种�
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
 协程跟线程是有区别的，线程由CPU调度是抢占式的，协程由用户态调度是协作式的，一个协程让出CPU后，才执行下一个协程。
 
@@ -165,11 +165,11 @@ Go为了提供更容易使用的并发方法，使用了goroutine和channel。go
 
 ​    好了，既然我们知道了协程和线程的关系，那么最关键的一点就是调度协程的调度器的实现了。
 
-​    Go目前使用的调度器是2012年重新设计的，因为之前的调度器性能存在问题，所以使用4年就被废弃了，那么我们先来分析一下被废弃的调度器是如何运作的？![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018108)
+​    Go目前使用的调度器是2012年重新设计的，因为之前的调度器性能存在问题，所以使用4年就被废弃了，那么我们先来分析一下被废弃的调度器是如何运作的？![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018108)
 
 下面我们来看看被废弃的golang调度器是如何实现的？
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018402)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018402)
 
 ​    M想要执行、放回G都必须访问全局G队列，并且M有多个，即多线程访问同一资源需要加锁进行保证互斥/同步，所以全局G队列是有互斥锁进行保护的。
 
@@ -187,13 +187,13 @@ Go为了提供更容易使用的并发方法，使用了goroutine和channel。go
 
 
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 ## 二、Goroutine调度器的GMP模型设计思想
 
 面对之前调度器的问题，Go设计了新的调度器，在新调度器中，除了M(thread)和G(goroutine)，又引进了P(Processor)。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018400)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018400)
 
 Processor，它包含了运行goroutine的资源，如果线程想运行goroutine，必须先获取P，P中还包含了可运行的G队列。
 
@@ -203,7 +203,7 @@ Processor，它包含了运行goroutine的资源，如果线程想运行goroutin
 
 在Go中，线程是运行goroutine的实体，调度器的功能是把可运行的goroutine分配到工作线程上。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018407)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018407)
 
 
 
@@ -313,7 +313,7 @@ M与P的数量没有绝对关系，一个M阻塞，P就会去创建或者切换�
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
 
 1、我们通过 go func()来创建一个goroutine
 
@@ -341,7 +341,7 @@ M与P的数量没有绝对关系，一个M阻塞，P就会去创建或者切换�
 
 ### （4）"go func()"调度过程
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
 
 
@@ -459,9 +459,9 @@ $ go tool trace trace.out2020/02/23 10:44:11 Parsing trace...2020/02/23 10:44:11
 
 我们可以通过浏览器打开`http://127.0.0.1:33479`网址，点击`view trace` 能够看见可视化的调度流程。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018401)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018401)
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018681)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018681)
 
 **G信息**
 
@@ -469,7 +469,7 @@ $ go tool trace trace.out2020/02/23 10:44:11 Parsing trace...2020/02/23 10:44:11
 
 点击Goroutines那一行可视化的数据条，我们会看到一些详细的信息。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018439)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018439)
 
 ```
 一共有两个G在程序中，一个是特殊的G0，是每个M必须有的一个初始化的G，这个我们不必讨论。
@@ -481,7 +481,7 @@ $ go tool trace trace.out2020/02/23 10:44:11 Parsing trace...2020/02/23 10:44:11
 
 点击Threads那一行可视化的数据条，我们会看到一些详细的信息。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
 一共有两个M在程序中，一个是特殊的M0，用于初始化使用，这个我们不必讨论。
 
@@ -489,7 +489,7 @@ $ go tool trace trace.out2020/02/23 10:44:11 Parsing trace...2020/02/23 10:44:11
 
 **P信息**
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018404)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018404)
 
 
 
@@ -499,11 +499,11 @@ G1中调用了`main.main`，创建了`trace goroutine g18`。G1运行在P1上，
 
 我们再来看看上面的M信息。
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 我们会发现，确实G18在P0上被运行的时候，确实在Threads行多了一个M的数据，点击查看如下：
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 多了一个M2应该就是P0为了执行G18而动态创建的M2.
 
@@ -563,7 +563,7 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 ## 三、Go调度器执行过程全解析
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 
 
@@ -571,11 +571,11 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
    P拥有G1，M1获取P后开始运行G1，G1使用`go func()`创建了G2，为了局部性G2优先加入到P1的本地队列。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018403)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018403)
 
 
 
@@ -583,11 +583,11 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018405)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018405)
 
 ​    G1运行完成后(函数：`goexit`)，M上运行的goroutine切换为G0，G0负责调度时协程的切换（函数：`schedule`）。从P的本地队列取G2，从G0切换到G2，并开始运行G2(函数：`execute`)。实现了线程M1的复用。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018447)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018447)
 
 
 
@@ -597,11 +597,11 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 ​     假设每个P的本地队列只能存3个G。G2要创建了6个G，前3个G（G3, G4, G5）已经加入p1的本地队列，p1本地队列满了。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018406)
 
 
 
@@ -612,7 +612,7 @@ $ GODEBUG=schedtrace=1000 ./trace2SCHED 0ms: gomaxprocs=2 idleprocs=0 threads=4 
 
 G2在创建G7的时候，发现P1的本地队列已满，需要执行负载均衡(把P1中本地队列中前一半的G，还有新创建G转移到全局队列)（实现中并不一定是新的G，如果G是G2之后就执行的，会被保存在本地队列，利用某个老的G替换新G加入全局队列）
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018438)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018438)
 
 
 
@@ -628,7 +628,7 @@ G2在创建G7的时候，发现P1的本地队列已满，需要执行负载均�
 
   G2创建G8时，P1的本地队列未满，所以G8会被加入到P1的本地队列。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
 
   G8加入到P1点本地队列的原因还是因为P1此时在与M1绑定，而G2此时是M1在执行。所以G2创建的新的G会优先放置到自己的M绑定的P上。
 
@@ -640,7 +640,7 @@ G2在创建G7的时候，发现P1的本地队列已满，需要执行负载均�
 
 规定：在创建G时，运行的G会尝试唤醒其他空闲的P和M组合去执行。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018405)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018405)
 
 
 
@@ -661,7 +661,7 @@ n = min(len(GQ)/GOMAXPROCS + 1, len(GQ/2))
   至少从全局队列取1个g，但每次不要从全局队列移动太多的g到p本地队列，给其他p留点。这是从全局队列到P本地队列的负载均衡。
 ```
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018440)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018440)
 
 ​    
 
@@ -677,9 +677,9 @@ n = min(len(GQ)/GOMAXPROCS + 1, len(GQ/2))
 
   假设G2一直在M1上运行，经过2轮后，M2已经把G7、G4从全局队列获取到了P2的本地队列并完成运行，全局队列和P2的本地队列都空了,如场景8图的左半部分。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
   全局队列已经没有G，那m就要执行work stealing(偷取)：从其他有G的P哪里偷取一半G过来，放到自己的P本地队列。P2从P1的本地队列尾部取一半的G，本例中一半则只有1个G8，放到P2的本地队列并执行。
 
@@ -693,13 +693,13 @@ n = min(len(GQ)/GOMAXPROCS + 1, len(GQ/2))
 
 
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
   G1本地队列G5、G6已经被其他M偷走并运行完成，当前M1和M2分别在运行G2和G8，M3和M4没有goroutine可以运行，M3和M4处于自旋状态，它们不断寻找goroutine。
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018490)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018490)
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018450)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018450)
 
   为什么要让m3和m4自旋，自旋本质是在运行，线程在运行却没有执行G，就变成了浪费CPU. 为什么不销毁现场，来节约CPU资源。因为创建和销毁CPU也会浪费时间，我们希望当有新goroutine创建时，立刻能有M运行它，如果销毁再新建就增加了时延，降低了效率。当然也考虑了过多的自旋线程是浪费CPU，所以系统中最多有`GOMAXPROCS`个自旋的线程(当前例子中的`GOMAXPROCS`=4，所以一共4个P)，多余的没事做线程会让他们休眠。
 
@@ -715,11 +715,11 @@ n = min(len(GQ)/GOMAXPROCS + 1, len(GQ/2))
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018415)
 
   假定当前除了M3和M4为自旋线程，还有M5和M6为空闲的线程(没有得到P的绑定，注意我们这里最多就只能够存在4个P，所以P的数量应该永远是M>=P, 大部分都是M在抢占需要运行的P)，G8创建了G9，G8进行了阻塞的系统调用，M2和P2立即解绑，P2会执行以下判断：如果P2本地队列有G、全局队列有G或有空闲的M，P2都会立马唤醒1个M和它绑定，否则P2则会加入到空闲P列表，等待M来获取可用的p。本场景中，P2本地队列有G9，可以和其他空闲的线程M5绑定。
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 
 
@@ -731,11 +731,11 @@ n = min(len(GQ)/GOMAXPROCS + 1, len(GQ/2))
 
 
 
-![image.gif](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
+![image.gif](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/image.gif)
 
 ​    G8创建了G9，假如G8进行了非阻塞系统调用
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018441)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-4-goalng-GMP模型.assets/640-1612425018441)
 
 
 

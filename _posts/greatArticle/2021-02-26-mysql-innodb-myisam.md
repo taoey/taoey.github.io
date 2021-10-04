@@ -17,11 +17,11 @@ keywords: mysql,innodb,myisam
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-02-26-mysql-innodb-myisam.assets/20180923094753230)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-02-26-mysql-innodb-myisam.assets/20180923094753230)
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-02-26-mysql-innodb-myisam.assets/20180923094753224)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-02-26-mysql-innodb-myisam.assets/20180923094753224)
 
 
 
@@ -79,7 +79,7 @@ MyISAM基于ISAM存储引擎，并对其进行扩展。它是在Web、数据仓�
 
 在实际工作中，选择一个合适的存储引擎是一个比较复杂的问题。每种存储引擎都有自己的优缺点，不能笼统地说谁比谁好。但建议选择使用**InnoDB**
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-02-26-mysql-innodb-myisam.assets/1460000012588610)
+![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-02-26-mysql-innodb-myisam.assets/1460000012588610)
 
 **InnoDB：** 支持事务处理，支持外键，支持崩溃修复能力和并发控制。如果需要对事务的完整性要求比较高（比如银行），要求实现并发控制（比如售票），那选择InnoDB有很大的优势。如果需要**频繁的更新、删除**操作的数据库，也可以选择InnoDB，因为支持事务的提交（commit）和回滚（rollback）。
 
