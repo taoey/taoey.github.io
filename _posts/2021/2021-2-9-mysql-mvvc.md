@@ -88,7 +88,7 @@ delete from table where id = xxx
 
 下面我画了一个可见性的算法的流程图
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241578064-f5bb8791-be1e-473f-ad6c-6e4aa4567b6a.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241578064-f5bb8791-be1e-473f-ad6c-6e4aa4567b6a.webp)
 
 ## 三、实践
 
@@ -120,7 +120,7 @@ delete from table where id = xxx
 
 ### 2、示例一
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577202-2d339ac0-0e3b-42da-a3c6-0dc5a3868d28.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577202-2d339ac0-0e3b-42da-a3c6-0dc5a3868d28.webp)
 
 使用过 MySQL 的都知道，因为隔离性，事务 B 此时获取到的数据肯定是这样的。
 
@@ -136,7 +136,7 @@ delete from table where id = xxx
 
 然后事务A进行了更新操作，如图所示，更新操作创建了一个新的版本并且新版本的回滚指针指向了旧的版本(注意 undo log其实存放的是逻辑日志，这里为了方便我直接写成物理日志)。
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/16ddddda50800f63)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/16ddddda50800f63)
 
 最后 事务B 进行了快照读，注意，这是我们分析的重点。
 
@@ -156,7 +156,7 @@ delete from table where id = xxx
 复制代码
 ```
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/16ddddda50800f63)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/16ddddda50800f63)
 
 ```
 其实你也发现了这是一个链表，此时链表头的 DB_TRX_ID 为 2
@@ -192,7 +192,7 @@ delete from table where id = xxx
 
 这个操作的流程图如下
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577742-dcd314b3-03ba-4a68-b662-b2ce2c3482d3.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577742-dcd314b3-03ba-4a68-b662-b2ce2c3482d3.webp)
 
 这个时候我们再来分析一下 事务c产生的 read-view。
 
@@ -224,19 +224,19 @@ up-limit-id = 3
 
 为了加深理解，我们再使用一个相对来说比较复杂的示例来验证 **可见性算法** 。
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577255-b68c30e1-2cbe-48fe-a1fb-963b353dd694.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577255-b68c30e1-2cbe-48fe-a1fb-963b353dd694.webp)
 
 首先我们在事务A中删除一条记录，这个时候就变成了下面的样子。
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577241-76c3762b-ce70-444a-8d03-4c67e2a67419.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577241-76c3762b-ce70-444a-8d03-4c67e2a67419.webp)
 
 然后事务B进行了插入，这样就变成了下面这样。
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/16dde38e3d6c258f)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/16dde38e3d6c258f)
 
 然后事务B进行了 select 操作，我们可以发现 这个时候整张表其实会变成这样让这个 select 操作进行选取。
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577232-4471831e-b16d-4bd9-be57-808d63cc2450.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577232-4471831e-b16d-4bd9-be57-808d63cc2450.webp)
 
 此时的 read-view 为
 
@@ -273,7 +273,7 @@ up-limit-id = 2
 
 然后此时所见和上面也是一样的
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577230-ca85beed-1ad5-4c84-8544-43e2bb8fb66a.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577230-ca85beed-1ad5-4c84-8544-43e2bb8fb66a.webp)
 
 这个时候我们进行 **快照读**，首先对于前面两条小明和小方的记录是一样的，此时 DB_TX_ID 为 1，我们可以判断此时 DB_TX_ID = 1 < up-limit-id = 2 成立故返回。然后判断小张这条记录，首先 DB_TX_ID = 2 = current_tx_id = 2 成立故返回发现前面的 **isDelete** 标志为true 则说明已被删除则返回空，对于第四条小亮的也是一样判断 DB_TX_ID = 4 < up-limit-id = 2 不成立进入下一步判断 DB_TX_ID = 4 >= low-limit-id = 5 不成立进入最后一步发现在活跃事务数组中故不可见且此条记录回滚指针为null所以返回空。
 
@@ -290,7 +290,7 @@ up-limit-id = 2
 
 之后是事务C进行 **快照读** 操作。首先此时视图还是这个样子
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577231-7ffc8270-7e2d-4d00-927e-3f6757c93192.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577231-7ffc8270-7e2d-4d00-927e-3f6757c93192.webp)
 
 然后对于事务C的 read-view 为
 
@@ -313,7 +313,7 @@ up-limit-id = 2
 
 后面事务A和事务B都进行了提交的动作，并且有一个事务D进行了快照读，此时视图还是如此
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577871-a55a58f7-5892-4c95-a2ad-5fcc737a65af.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577871-a55a58f7-5892-4c95-a2ad-5fcc737a65af.webp)
 
 但此时的 read-view发生了变化
 
@@ -348,7 +348,7 @@ up-limit-id = 4
 
 为了你再次深入理解这个算法，我再把这张图挂上来
 
-![image](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-mysql-mvvc.assets/1597241577995-2270849b-04f4-4ccd-8f0b-d391a778e6f9.webp)
+![image](http://beangogo.cn/assets/images/artcles/2021-2-9-mysql-mvvc.assets/1597241577995-2270849b-04f4-4ccd-8f0b-d391a778e6f9.webp)
 
 关注下面的标签，发现更多相似文章
 

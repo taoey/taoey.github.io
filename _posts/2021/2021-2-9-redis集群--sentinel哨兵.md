@@ -8,13 +8,13 @@ keywords: redis,集群
 
 通过Redis Sentinel 来实现Redis的高可用集群方案，本文使用如上配置：一主两从
 
-![image.png](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1595224812819-af458051-28cc-41f9-a8b0-54aadad0ed39.png)
+![image.png](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1595224812819-af458051-28cc-41f9-a8b0-54aadad0ed39.png)
 
 整体架构：
 
 - 当前采用主从机构+哨兵（sentinel），实现redis容灾的自动切换
 
-  ![](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/sentinel.jpeg)
+  ![](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/sentinel.jpeg)
 
 -  一个主节点（master）可拥有多个从节点（slave），从节点实现对主节点的复制，保证数据同步。而哨兵（sentinel）则对各节点进行监控，主要包括**主节点存活检测、主从运行情况检测**等，一旦主节点宕机，哨兵可自动进行**故障转移 （failover）、主从切换**。 
 - 采用3台主机来进行配置，一个主机拥有一个redis服务器和sentinel
@@ -95,11 +95,11 @@ appendonly yes
 ~~~
 
 - 192.168.3.189: 6379 （master）
-![](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596518761606.png)
+![](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596518761606.png)
 
 - 192.168.3.190:6379 （slave）（当master_link_status 为 down 时，检查端口是否开启）
 
-![](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596518870312.png)
+![](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596518870312.png)
 
 - 主从验证，
 
@@ -107,11 +107,11 @@ appendonly yes
 
   - 主机（master）
 
-![1596519195543](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596519195543.png)
+![1596519195543](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596519195543.png)
 
   - 从机（slave）
 
-![1596519250568](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596519250568.png)
+![1596519250568](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596519250568.png)
 
 ## 3. sentinel 文件配置
 
@@ -165,7 +165,7 @@ appendonly yes
 
 - 哨兵已监听到master主机ip和端口和运行状态 ，并且有2台从机，3个哨兵 。
 
-![1596521549910](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596521549910.png)
+![1596521549910](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596521549910.png)
 
 ​		
 
@@ -175,8 +175,8 @@ appendonly yes
 
   - 重启master（192.168.3.189）后redis状态，当前显示192.168.3.191 从机服务器切换成为主机
 
-    ![1596521966337](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596521966337.png)
+    ![1596521966337](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596521966337.png)
 
   - 查看（192.168.3.191）服务器，此时从机切换成主机（master）
 
-    ![1596522090356](https://raw.githubusercontent.com/taoey/taoey.github.io/master/_pics/2021-2-9-redis集群--sentinel哨兵.assets/1596522090356.png)
+    ![1596522090356](http://beangogo.cn/assets/images/artcles/2021-2-9-redis集群--sentinel哨兵.assets/1596522090356.png)
