@@ -15,7 +15,7 @@ keywords: golang,slice
 
 切片是一个很小的对象，它对底层的数组(内部是通过数组保存数据的)进行了抽象，并提供相关的操作方法。切片是一个有三个字段的数据结构，这些数据结构包含 Golang 需要操作底层数组的元数据：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594559139114-62f92e38-30d4-4e14-a599-ba5a36fdc25f.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594559139114-62f92e38-30d4-4e14-a599-ba5a36fdc25f.png)
 
 这 3 个字段分别是指向底层数组的指针、切片访问的元素的个数(即长度)和切片允许增长到的元素个数(即容量)。
 
@@ -84,11 +84,11 @@ myNum := []int{}
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594559649142-5dcf7eff-3d5a-4a54-87cc-11319f84d80b.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594559649142-5dcf7eff-3d5a-4a54-87cc-11319f84d80b.png)
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594559649138-d88a489f-a1b8-4ceb-9b59-0cb99f07bd0a.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594559649138-d88a489f-a1b8-4ceb-9b59-0cb99f07bd0a.png)
 
 
 
@@ -108,7 +108,7 @@ myNum := []int{}
 
 **注意**：所有类型的「空切片」都共享一个内存地址
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594561415388-160ae5a4-099a-4e3c-90bb-19bb14356b63.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594561415388-160ae5a4-099a-4e3c-90bb-19bb14356b63.png)
 
 
 
@@ -174,7 +174,7 @@ myNum := []int{10, 20, 30, 40, 50}
 newNum := slice[1:3]
 ```
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594560099115-b6d78f7b-26cd-494f-830b-87d2edde9c23.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594560099115-b6d78f7b-26cd-494f-830b-87d2edde9c23.png)
 
 
 
@@ -182,7 +182,7 @@ newNum := slice[1:3]
 
 把 35 赋值给 newNum 索引为 1 的元素的同时也是在修改 myNum 索引为 2 的元素：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594560099153-ea488f49-292a-41ee-8077-2613bdc2aa0e.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594560099153-ea488f49-292a-41ee-8077-2613bdc2aa0e.png)
 
 
 
@@ -202,7 +202,7 @@ myFruit := fruit[2:3:4]
 
 这个切片操作执行后，新切片里从底层数组引用了 1 个元素，容量是 2 个元素。具体来说，新切片引用了 Plum 元素，并将容量扩展到 Banana 元素：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594560983067-00b5bf99-ceae-46db-ab33-edda5229530a.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594560983067-00b5bf99-ceae-46db-ab33-edda5229530a.png)
 
 
 
@@ -222,7 +222,7 @@ myFruit = append(myFruit, "Kiwi")
 
 这里，我们限制了 myFruit 的容量为 1。当我们第一次对 myFruit 调用 append() 函数的时候，会创建一个新的底层数组，这个数组包括 2 个元素，并将水果 Plum 复制进来，再追加新水果 Kiwi，并返回一个引用了这个底层数组的新切片。因为新的切片 myFruit 拥有了自己的底层数组，所以杜绝了可能发生的问题。我们可以继续向新切片里追加水果，而不用担心会不小心修改了其他切片里的水果。可以通过下图来理解此时内存中的数据结构：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594560983066-6fc7417c-a9ed-453e-adf9-70d27a267b90.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594560983066-6fc7417c-a9ed-453e-adf9-70d27a267b90.png)
 
 
 
@@ -464,7 +464,7 @@ newNum = append(newNum, 60)
 
 执行上面的代码后的底层数据结构如下图所示：
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594560765952-6bf8d565-b6f3-4696-9d2d-0a79daf1d171.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594560765952-6bf8d565-b6f3-4696-9d2d-0a79daf1d171.png)
 
 此时因为 newNum 在底层数组里还有额外的容量可用，append() 函数将可用的元素合并入切片的长度，并对其进行赋值。由于和原始的切片共享同一个底层数组，myNum 中索引为 3 的元素的值也被改动了。
 
@@ -514,7 +514,7 @@ return slice
 
 
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-10-golang-slice.assets/1594560983074-b0c456e6-1be3-44dd-8f68-4fa37a2af383.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-10-golang-slice.assets/1594560983074-b0c456e6-1be3-44dd-8f68-4fa37a2af383.png)
 
 
 

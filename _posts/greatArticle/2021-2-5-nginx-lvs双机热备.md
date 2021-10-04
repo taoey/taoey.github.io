@@ -26,7 +26,7 @@ Keepalived软件主要是通过VRRP协议实现高可用功能的,VRRP是Virtual
 
 **VRRP原理**
 
-![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596005204240-a77b93df-346c-4a0a-b8ec-4b1606f86d38.png)
+![image](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596005204240-a77b93df-346c-4a0a-b8ec-4b1606f86d38.png)
 
 - master在工作状态会不断群发一个广播包(内涵优先参数)
 - 其他路由收到收到广播后会和自己的优先参数作对比,如果优先参数小于自己则什么都不执行,如果优先参数大于自己则开启争抢机制
@@ -49,13 +49,13 @@ Nginx在此次实验中的定位：资源服务器
 
 ## 2、部署结构图
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596260157193-c9c1837f-bf89-44ea-8537-41d447306be7.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596260157193-c9c1837f-bf89-44ea-8537-41d447306be7.png)
 
 ## 3、实操部署
 
 我们事先准备两台虚拟机，并且保证网络畅通，如下图：
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596260188082-352353d9-bfff-483d-b248-4f68ca895edd.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596260188082-352353d9-bfff-483d-b248-4f68ca895edd.png)
 
 （1）docker 安装
 
@@ -78,7 +78,7 @@ docker run hello-world
 
 https://github.com/Taoey/tao-dockerfiles/tree/master/nginx
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596262247379-003e00ea-a7bd-4b4f-9f47-50710440ca06.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596262247379-003e00ea-a7bd-4b4f-9f47-50710440ca06.png)
 
 
 
@@ -101,13 +101,13 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 启动之后的效果：
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596262575094-50eae203-45ed-48e6-8e57-3316f60d405a.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596262575094-50eae203-45ed-48e6-8e57-3316f60d405a.png)
 
 
 
 为了后期比较直接的区分这两台服务器，我们需要编辑刚刚从我的github上下载的nginx的相关文件：html文件夹下的index.html，我们以修改主节点为例
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596262815932-57886598-8258-46dc-b9e4-16dc3c457a0d.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596262815932-57886598-8258-46dc-b9e4-16dc3c457a0d.png)
 
 
 
@@ -115,9 +115,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 刷新网页，修改之后的效果图：
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596262912368-492f67e8-b825-411b-b235-da2ba341d115.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596262912368-492f67e8-b825-411b-b235-da2ba341d115.png)
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596262925533-21933011-fbbf-443a-ab91-5629199d877d.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596262925533-21933011-fbbf-443a-ab91-5629199d877d.png)
 
 
 
@@ -193,7 +193,7 @@ systemctl status keepalived   # 查看状态
 
 访问http://192.168.2.111:8080/ 发现是主节点IP，keepalived配置完成
 
-![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_posts/greatArticle/2021-2-5-nginx-lvs双机热备.assets/1596283134847-d3a31211-9d83-4d64-b5bc-1aad556a81d0.png)
+![image.png](https://raw.githubusercontent.com/Taoey/Taoey.github.io/master/_pics/2021-2-5-nginx-lvs双机热备.assets/1596283134847-d3a31211-9d83-4d64-b5bc-1aad556a81d0.png)
 
 
 
