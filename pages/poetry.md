@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 诗歌
+title: 诗词
 keywords: 维基, poetry
-menu: 诗歌
+menu: 诗词
 permalink: /poetry/
 ---
 
