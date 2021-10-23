@@ -4,10 +4,10 @@
 baseurl:
 url:
 date_format: "ordinal"
-title: 豆仔ogo
+title: 豆仔gogo
 subtitle: "专注后端知识"
 description: "有时候阳光很好，有时候阳光很暗，这就是生活。"
-keywords: 豆仔ogo
+keywords: 豆仔gogo
 favicon: /favicon.ico
 timezone: Asia/Shanghai
 encoding: "utf-8"
