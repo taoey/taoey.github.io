@@ -3,7 +3,6 @@ layout: post
 title: unity常见词汇(持续更新中)
 categories: [unity]
 keywords: #uinty
-bilibili: ['//player.bilibili.com/player.html?aid=506699232&bvid=BV1Hg411T7mi&cid=441303383&page=1', '//player.bilibili.com/player.html?aid=506699232&bvid=BV1Hg411T7mi&cid=441303383&page=1']
 ---
 
 常见词汇一览
