@@ -1,7 +1,6 @@
 ---
 layout: post
-title: 斐讯N1--Armbian
-
+title: 斐讯N1--Armbian系统的安装及配置
 categories: [斐讯N1]
 keywords: #工具
 wxurl:
