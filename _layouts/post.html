@@ -36,10 +36,13 @@ layout: default
           原文地址：<a href="{{ page.wxurl }}">{{ page.wxurl }}</a>
         {% endif %}
       </blockquote>
+      <!-- 添加B站视频嵌入支持 -->
       {% if page.bilibili %}
         B站地址:
-        <iframe src="{{ page.bilibili }}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%; height: 500px; max-width:100%; align:center; padding:20px 0;"> </iframe>
       {% endif %}
+      {% for bilibili_url in page.bilibili %}
+        <iframe src="{{ bilibili_url }}" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:100%; height: 500px; max-width:100%; align:center; padding:20px 0;"> </iframe>
+      {% endfor %}
     <!-- 文章内容 -->
     {{ content }}
     {% include article-footer.html %}
