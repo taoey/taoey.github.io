@@ -30,10 +30,12 @@ keywords: #vscode
 
 ### 2.1 Git Graph
 用于查看git提交记录图
+
 <img src="http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-41-53.png" style="zoom:33%;" />
 
 ### 2.2 GitLens
 主要用于显示当前行的最近提交
+
 <img src="http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-45-24.png" style="zoom:33%;" />
 
 ### 2.3 Git History
