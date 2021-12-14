@@ -11,7 +11,9 @@ permalink: /reading/
 
 
 ## 2021年12月
-
+- [Go 语言优秀资源整理，为项目落地加速](https://shockerli.net/post/go-awesome/)
+- [有哪些值得学习的 Go 语言开源项目？](https://www.zhihu.com/question/20801814)
+- [优秀的Go语言项目推荐](https://www.open-open.com/lib/view/open1430311673818.html)
  - [Uber Go 语言编程规范](https://mp.weixin.qq.com/s/SNmq0llxuu8NUkhwenegRg)
  - [源码阅读计划 ：一个 Go 语言实现的快速、稳定、内嵌的 k-v 存储引擎](https://github.com/flower-corp/rosedb)
  - [HTTP 的本质？HTTP 和 RPC 的区别？](https://www.jianshu.com/p/fe5ccfc5d7bd)
