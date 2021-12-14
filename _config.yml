@@ -54,6 +54,10 @@ navs:
   -
     href: /go_learn/
     label: go语言生态
+  
+  -
+    href: /reading/
+    label: 阅读文章
 
   # -
   #   href: /about/
