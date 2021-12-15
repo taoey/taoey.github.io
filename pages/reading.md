@@ -11,6 +11,7 @@ permalink: /reading/
 
 
 ## 2021年12月
+- [如何阅读一个开源项目的源码？](https://studygolang.com/articles/9832)
 - [函数 注释规范_Go语言编码规范](https://blog.csdn.net/weixin_39968266/article/details/112634796)
 - [GO编程模式 ： 泛型编程](https://coolshell.cn/articles/21615.html)
 - [Go泛型是怎么实现的?](https://colobu.com/2021/08/30/how-is-go-generic-implemented/) 
