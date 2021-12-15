@@ -11,6 +11,10 @@ permalink: /reading/
 
 
 ## 2021年12月
+- [使用 Go 语言标准库对 CSV 文件进行读写](https://toutiao.io/posts/dbq32x/preview)
+- [某度二面：MySQL 百万级数据，怎么做分页查询？说说思路](https://mp.weixin.qq.com/s?__biz=MzU3MDAzNDg1MA==&mid=2247490913&idx=1&sn=a389144a66745a1f4e38fe193695ed04&chksm=fcf4c2accb834bba04c6642d62aae3eaa506e097bb5c0d5956a61a1154cd996ca617919cd283&token=559734007&lang=zh_CN#rd)
+- [Go 语言高性能编程](https://geektutu.com/post/high-performance-go.html)
+- [几种常用编码区别](https://www.cnblogs.com/klb561/p/12064095.html)
 - [如何阅读一个开源项目的源码？](https://studygolang.com/articles/9832)
 - [函数 注释规范_Go语言编码规范](https://blog.csdn.net/weixin_39968266/article/details/112634796)
 - [GO编程模式 ： 泛型编程](https://coolshell.cn/articles/21615.html)
@@ -32,3 +36,14 @@ permalink: /reading/
  - [Golang随机数生成和原理](https://wangbjun.site/2020/coding/golang/random.html)
  - [python 可视化 二维坐标标注等等](https://www.cnblogs.com/caiyishuai/p/9607250.html)
  - [ Go 语言中迭代 map 时的无序性与随机性](https://blog.twofei.com/847/)
+ - [在Git克隆之后直接显示为已修改的文件](https://www.codenong.com/5009096/)
+ - [彻底解决Golang获取当前项目绝对路径问题](https://zhuanlan.zhihu.com/p/363714760)
+ - [Unity 手机屏幕适配](https://www.cnblogs.com/YZFHKMS-X/p/11780780.html)
+ - [用遗传算法求解TSP问题](https://blog.csdn.net/taonull/article/details/45972393)
+ - [Navicat Premium Mac 12 破解](https://blog.csdn.net/andong154564667/article/details/82386383)
+ - [Mysql报Deadlock found when trying to get lock； try restarting transaction问题解决](https://blog.csdn.net/qq_44240587/article/details/108400666)
+ - [为什么 MySQL 的自增主键不单调也不连续](https://draveness.me/whys-the-design-mysql-auto-increment/)
+ - [GO性能优化小结 ](https://www.cnblogs.com/zhangboyu/p/7456609.html)
+ - [Linux 命令行发送邮件的 5 种方法](https://juejin.cn/post/6844904018733432840)
+ - [golang 读取 http包读取流式响应正文](https://blog.csdn.net/weixin_35364187/article/details/112098628)
+ - [网络IO和磁盘IO详解](https://www.cnblogs.com/sunsky303/p/8962628.html)
