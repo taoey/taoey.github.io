@@ -11,6 +11,10 @@ permalink: /reading/
 
 
 ## 2021年12月
+- [函数 注释规范_Go语言编码规范](https://blog.csdn.net/weixin_39968266/article/details/112634796)
+- [GO编程模式 ： 泛型编程](https://coolshell.cn/articles/21615.html)
+- [Go泛型是怎么实现的?](https://colobu.com/2021/08/30/how-is-go-generic-implemented/) 
+- [为什么这么设计系列文章](https://draveness.me/whys-the-design/)
 - [Go 语言优秀资源整理，为项目落地加速](https://shockerli.net/post/go-awesome/)
 - [有哪些值得学习的 Go 语言开源项目？](https://www.zhihu.com/question/20801814)
 - [优秀的Go语言项目推荐](https://www.open-open.com/lib/view/open1430311673818.html)
