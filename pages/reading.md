@@ -36,6 +36,11 @@ permalink: /reading/
  - [Golang随机数生成和原理](https://wangbjun.site/2020/coding/golang/random.html)
  - [python 可视化 二维坐标标注等等](https://www.cnblogs.com/caiyishuai/p/9607250.html)
  - [ Go 语言中迭代 map 时的无序性与随机性](https://blog.twofei.com/847/)
+
+
+----------
+
+
  - [在Git克隆之后直接显示为已修改的文件](https://www.codenong.com/5009096/)
  - [彻底解决Golang获取当前项目绝对路径问题](https://zhuanlan.zhihu.com/p/363714760)
  - [Unity 手机屏幕适配](https://www.cnblogs.com/YZFHKMS-X/p/11780780.html)
@@ -47,3 +52,7 @@ permalink: /reading/
  - [Linux 命令行发送邮件的 5 种方法](https://juejin.cn/post/6844904018733432840)
  - [golang 读取 http包读取流式响应正文](https://blog.csdn.net/weixin_35364187/article/details/112098628)
  - [网络IO和磁盘IO详解](https://www.cnblogs.com/sunsky303/p/8962628.html)
+ - [MySQL主从同步延迟问题，数据一致性问题](http://blog.zhangwu.vip/archives/934)
+ - [MySQL主从数据库同步延迟问题解决](https://developer.aliyun.com/article/42638)
+ - [彻底终结MySQL同步延迟问题](https://www.jianshu.com/p/ed19bb0e748a)
+ - [MySQL 技术内幕：主从同步和主从延时](http://ningg.top/inside-mysql-master-slave-delay/)
