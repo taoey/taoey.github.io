@@ -64,6 +64,7 @@ permalink: /go_learn/
 ### 工具
 
 - [jsonTOGo ](https://mholt.github.io/json-to-go/)/ [json2go](https://oktools.net/json2go):：好用的json转go struct工具, 提高编码效率
+- [SQL to Gorm](https://sql2gorm.mccode.info/) ： SQL转grom工具  -->[源码，可离线编译](https://github.com/cascax/sql2gorm)
 - [gopm.io](https://gopm.io/)：科学下载第三方包
 - [百度BFE](https://www.bfe-networks.net/)：开源的应用负载均衡产品，类似于Nginx
 
