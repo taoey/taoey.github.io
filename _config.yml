@@ -43,9 +43,9 @@ navs:
     href: /wiki/
     label: 随笔
 
-  # -
-  #   href: /2021/
-  #   label: 2021
+  -
+    href: /2022/
+    label: 2022 learning
 
   -
     href: /links/
