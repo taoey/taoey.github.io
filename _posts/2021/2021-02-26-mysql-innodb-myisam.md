@@ -1,8 +1,8 @@
 ---
 layout: post
-title: mysql引擎：innodb 和MyISAM
+title: mysql-引擎：innodb 和MyISAM
 categories: [mysql]
-description:  mysql引擎：innodb 和MyISAM
+description:  mysql-引擎：innodb 和MyISAM
 keywords: mysql,innodb,myisam
 ---
 

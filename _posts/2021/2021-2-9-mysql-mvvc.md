@@ -1,8 +1,8 @@
 ---
 layout: post
-title: MySQL MVVC多版本并发控制原理
+title: mysql-MVVC多版本并发控制原理
 categories: [mysql]
-description: MySQL MVVC多版本并发控制原理
+description: mysql-MVVC多版本并发控制原理
 keywords: mysql,mvvc
 ---
 前言：Multiversion (version) concurrency control (MCC or MVCC) *多版本并发控制* ，它是数据库管理系统一种常见的并发控制。

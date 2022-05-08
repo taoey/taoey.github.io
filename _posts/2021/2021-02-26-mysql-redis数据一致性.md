@@ -1,8 +1,8 @@
 ---
 layout: post
-title: mysql redis 如何保证缓存一致性
+title: mysql与redis 如何保证缓存一致性
 categories: [mysql,redis]
-description:  mysql redis 如何保证缓存一致性
+description:  mysql与redis 如何保证缓存一致性
 keywords: mysql,redis,缓存一致性
 ---
 
