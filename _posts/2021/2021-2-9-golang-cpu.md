@@ -1,8 +1,8 @@
 ---
 layout: post
-title: CPU缓存体系对Go程序的影响
+title: cpu缓存体系对go程序的影响
 categories: [golang,性能调优]
-description: CPU缓存体系对Go程序的影响
+description: cpu缓存体系对go程序的影响
 keywords: golang,cpu,缓存
 ---
 
