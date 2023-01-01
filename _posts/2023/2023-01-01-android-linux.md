@@ -8,9 +8,7 @@ keywords: Android, 安卓,服务器
 
 ## 前言分析
 
-主要目的：
-
-把安卓手机变成随身服务器，变身为个人随时工作站，主要使用的相关功能
+主要目的：把安卓手机变成随身服务器，变身为个人随时工作站，主要使用的相关功能
 
 - 能够使用相关开发语言：python3，go
 - 安装code-server，使用web版本随时在局域网内通过vscode进行编程工作
@@ -73,9 +71,9 @@ pkg install root-repo
 
 ![image-20230101213524460](http://beangogo.cn/assets/images/artcles/2023-01-01-android-linux.assets/image-20230101213524460.png)
 
-<img src="http://beangogo.cn/assets/images/artcles/artcles/2023-01-01-android-linux.assets/image-20230101214525768.png" alt="image-20230101214525768" style="zoom:50%;" />
+<img src="http://beangogo.cn/assets/images/artcles/2023-01-01-android-linux.assets/image-20230101214525768.png" alt="image-20230101214525768" style="zoom:50%;" />
 
-<img src="http://beangogo.cn/assets/images/artcles/artcles/2023-01-01-android-linux.assets/image-20230101214728481.png" alt="image-20230101214728481" style="zoom:50%;" />
+<img src="http://beangogo.cn/assets/images/artcles/2023-01-01-android-linux.assets/image-20230101214728481.png" alt="image-20230101214728481" style="zoom:50%;" />
 
 ## 方式3 ：AidLux
 
