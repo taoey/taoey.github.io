@@ -71,11 +71,11 @@ pkg install root-repo
 
 ```
 
-![image-20230101213524460](../../assets/images/artcles/2023-01-01-android-linux.assets/image-20230101213524460.png)
+![image-20230101213524460](http://beangogo.cn/assets/images/artcles/2023-01-01-android-linux.assets/image-20230101213524460.png)
 
-<img src="../../assets/images/artcles/2023-01-01-android-linux.assets/image-20230101214525768.png" alt="image-20230101214525768" style="zoom:50%;" />
+<img src="http://beangogo.cn/assets/images/artcles/artcles/2023-01-01-android-linux.assets/image-20230101214525768.png" alt="image-20230101214525768" style="zoom:50%;" />
 
-<img src="../../assets/images/artcles/2023-01-01-android-linux.assets/image-20230101214728481.png" alt="image-20230101214728481" style="zoom:50%;" />
+<img src="http://beangogo.cn/assets/images/artcles/artcles/2023-01-01-android-linux.assets/image-20230101214728481.png" alt="image-20230101214728481" style="zoom:50%;" />
 
 ## 方式3 ：AidLux
 
