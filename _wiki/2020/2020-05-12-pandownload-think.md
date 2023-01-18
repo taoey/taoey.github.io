@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: 2020-05-12-Pandownload作者被抓事件感想
+title: 2020-05-12-pandownload作者被抓事件感想
 categories: wiki
 description: 
 keywords: 
