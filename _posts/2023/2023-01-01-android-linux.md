@@ -110,3 +110,5 @@ bash: line 0: ulimit: open files: cannot modify limit: Operation not permitted
 
 - [极致安卓之—Termux安装完整版Linux](https://zhuanlan.zhihu.com/p/95865982)
 
+- [Importing and exporting files in UserLAnd](https://github.com/CypherpunkArmory/UserLAnd/wiki/Importing-and-exporting-files-in-UserLAnd)
+
