@@ -44,8 +44,12 @@ navs:
     label: 随笔
 
   -
-    href: /2022/
-    label: 2022
+    href: /github/
+    label: github
+
+  -
+    href: /learn/
+    label: learn
 
   -
     href: /links/

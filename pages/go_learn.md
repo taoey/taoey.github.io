@@ -10,6 +10,15 @@ permalink: /go_learn/
 
 个人练习源码合集：[https://github.com/Taoey/learning-go](https://github.com/Taoey/learning-go)
 
+
+### 工具
+
+- [jsonTOGo ](https://mholt.github.io/json-to-go/)/ [json2go](https://oktools.net/json2go):：好用的json转go struct工具, 提高编码效率
+- [SQL to Gorm](https://sql2gorm.mccode.info/) ： SQL转grom工具  -->[源码，可离线编译](https://github.com/cascax/sql2gorm)
+- [gopm.io](https://gopm.io/)：科学下载第三方包
+- [百度BFE](https://www.bfe-networks.net/)：开源的应用负载均衡产品，类似于Nginx
+
+
 ### 社区
 
 - [Go语言中文网](https://studygolang.com/)
@@ -60,13 +69,6 @@ permalink: /go_learn/
 | [Golang的反射reflect深入理解和示例](https://studygolang.com/articles/12348?fr=sidebar) | 写的挺好的一片文章                     |
 | [100 行写一个 go 的协程池 (任务池)](https://segmentfault.com/a/1190000021468353) | 小伙计，来写一个协程池吧               |
 | [Go slice扩容分析之 不是double或1.25那么简单](https://www.jianshu.com/p/303daad705a3) | 供以后研究源码用                       |
-
-### 工具
-
-- [jsonTOGo ](https://mholt.github.io/json-to-go/)/ [json2go](https://oktools.net/json2go):：好用的json转go struct工具, 提高编码效率
-- [SQL to Gorm](https://sql2gorm.mccode.info/) ： SQL转grom工具  -->[源码，可离线编译](https://github.com/cascax/sql2gorm)
-- [gopm.io](https://gopm.io/)：科学下载第三方包
-- [百度BFE](https://www.bfe-networks.net/)：开源的应用负载均衡产品，类似于Nginx
 
 ### 第三方库
 
