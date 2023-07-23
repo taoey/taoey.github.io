@@ -2,7 +2,7 @@
 layout: page
 title: 学习
 description: 
-menu: learn
+menu: 学习
 permalink: /learn/
 ---
 
