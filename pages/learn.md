@@ -1,9 +1,9 @@
 ---
 layout: page
-title: 2022
+title: 学习
 description: 
-menu: 2022
-permalink: /2022/
+menu: learn
+permalink: /learn/
 ---
 
 部分书籍和视频均搜集于互联网，仅供学习交流使用，请支持正版
