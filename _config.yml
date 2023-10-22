@@ -58,6 +58,11 @@ navs:
   -
     href: /go_learn/
     label: go语言生态
+
+    -
+    href: /msg_board/
+    label: 留言板
+    
   # -
   #   href: /about/
   #   label: 关于
