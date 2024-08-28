@@ -35,7 +35,7 @@ wxurl:
 
 小技巧：对于百度会员的购买，原来傻傻的在官网购花30购买，后来发现支付宝里有积分兑换，用**24.5**就能购买，哎~太年轻了
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757795-d7ebe92d-391b-402f-9a90-6516f7a1d9d3-20230118105017886.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757795-d7ebe92d-391b-402f-9a90-6516f7a1d9d3-20230118105017886.webp)
 
 pandownload隐私泄露？
 
@@ -55,13 +55,13 @@ pandownload隐私泄露？
 
 对这种操作，我都忍了，毕竟对于我来说是刚需，但是这钱花的憋屈
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757797-b8bedb83-72fe-4c5b-8d00-4a468bf49fa7-20230118105017910.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757797-b8bedb83-72fe-4c5b-8d00-4a468bf49fa7-20230118105017910.webp)
 
 
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757806-e462be27-392f-4bc4-8496-1a60c000c0ca-20230118105017651.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757806-e462be27-392f-4bc4-8496-1a60c000c0ca-20230118105017651.webp)
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757834-47cbf60a-c420-4827-8a6c-5be7f7b1439b-20230118105017879.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757834-47cbf60a-c420-4827-8a6c-5be7f7b1439b-20230118105017879.webp)
 
 
 
@@ -73,7 +73,7 @@ pandownload隐私泄露？
 - 一个看美剧的软件因为我是早期用户，送了个超级会员，同时软件由最初的干净变成了现在的广告连篇，我虽然有些不舒服，但是我还是会帮他们点击广告，因为我喜欢他们的产品啊~ 我也知道我看的是盗版，但是我受不了国内视频网站的对视频内容随意删减，我知道这些镜头对未成年人有影响，为了上架，不得不删除，但是我可以选择不看
 - 其他例子：你们可能会发现有些网站吧（咳咳~你懂得）有大量的博彩广告，但是我们丝毫不影响我们访问这个网站的频率，为什么？因为刚需~因为内容好
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757865-db5ec575-c8bb-46bd-8904-02c13234b9be-20230118105017889.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757865-db5ec575-c8bb-46bd-8904-02c13234b9be-20230118105017889.webp)
 
 ## 4、《我不是药神》的互联网版本《我不是盘神》？
 
@@ -98,9 +98,9 @@ pandownload隐私泄露？
 
 对此我只想说：哎~我太穷了，穷的都当不了资本注意的韭菜了
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757899-0d512842-78b0-4669-b921-971227380a3f-20230118105017958.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757899-0d512842-78b0-4669-b921-971227380a3f-20230118105017958.webp)
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757860-9aec095b-3197-4543-bf26-b0279001b266-20230118105017793.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757860-9aec095b-3197-4543-bf26-b0279001b266-20230118105017793.webp)
 
 ## 5、请理性看待问题！
 
@@ -120,4 +120,4 @@ PS：这个《我不是药神》还是我在网上现找的网盘资源看的（
 
 最后，顺便一提，百度网盘的评分已经如下，这种情况让我想到了钉钉
 
-![img](http://beangogo.cn/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757925-14154d70-8787-4d12-8904-82e2d16da5e6-20230118105017976.webp)
+![img](http://taoey.github.io/assets/images/artcles/2020-05-12-pandownload-think.assets/1589252757925-14154d70-8787-4d12-8904-82e2d16da5e6-20230118105017976.webp)

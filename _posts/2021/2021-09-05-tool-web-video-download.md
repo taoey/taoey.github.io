@@ -14,13 +14,13 @@ wxurl: https://mp.weixin.qq.com/s/2oRjrSUn8d_OyZaSGJ-XXw
 
 ### 1、谷歌浏览器插件--CoCoCut
 
-![image-20210905125756199](http://beangogo.cn/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905125756199.png)
+![image-20210905125756199](http://taoey.github.io/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905125756199.png)
 
 
 
 ### 2、谷歌浏览器插件--Video Downloader Pro
 
-![image-20210905125944110](http://beangogo.cn/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905125944110.png)
+![image-20210905125944110](http://taoey.github.io/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905125944110.png)
 
 
 
@@ -30,9 +30,9 @@ wxurl: https://mp.weixin.qq.com/s/2oRjrSUn8d_OyZaSGJ-XXw
 
 https://docs.qq.com/doc/DQ2lhaWRpS0tubVVF
 
-![image-20210905130346910](http://beangogo.cn/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905130346910.png)
+![image-20210905130346910](http://taoey.github.io/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905130346910.png)
 
-![image-20210905130757095](http://beangogo.cn/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905130757095.png)
+![image-20210905130757095](http://taoey.github.io/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905130757095.png)
 
 
 
@@ -50,7 +50,7 @@ you-get功能:
 
 3. 目前已经支持的网站包括如下图
 
-   ![image-20210905131420782](http://beangogo.cn/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905131420782.png)
+   ![image-20210905131420782](http://taoey.github.io/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20210905131420782.png)
 
 
 
@@ -88,7 +88,7 @@ https://youtube.iiilab.com/
 
 该视频解析网站，对于YouTube还支持音频的解析，很是不错，配合多线程文件下载工具是一个不错的选择，推荐使用
 
-![image-20211005105958699](http://beangogo.cn/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20211005105958699.png)
+![image-20211005105958699](http://taoey.github.io/assets/images/artcles/2021-09-05-工具-网页视频下载.assets/image-20211005105958699.png)
 
 ### 6、结语
 

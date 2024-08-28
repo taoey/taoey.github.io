@@ -12,7 +12,7 @@ keywords: redis,内存
 
 相关问题：redis 2G内存是否能存储 2.5G 数据？
 
-答案：可以，不过操作系统会使用swap空间，swap空间由硬盘提供，对于高并发场景会严重降低系统可用性，如果是缓存场景可以配置内存淘汰策略，具体配置可见：  [redis-内存淘汰策略](http://beangogo.cn/2021/02/20/redis-缓存淘汰策略/)，同时现在有种使用ssd做reids的方法 [pika](https://www.cnblogs.com/ExMan/p/11529059.html)
+答案：可以，不过操作系统会使用swap空间，swap空间由硬盘提供，对于高并发场景会严重降低系统可用性，如果是缓存场景可以配置内存淘汰策略，具体配置可见：  [redis-内存淘汰策略](http://taoey.github.io/2021/02/20/redis-缓存淘汰策略/)，同时现在有种使用ssd做reids的方法 [pika](https://www.cnblogs.com/ExMan/p/11529059.html)
 
 ---
 

@@ -20,7 +20,7 @@ golang  channel 的常见使用方式及底层原理
 
 ## channel的整体结构图
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan.png)
 
 简单说明：
 
@@ -61,7 +61,7 @@ type hchan struct {
 ch := make(chan int, 3)
 ```
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan1.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan1.png)
 
 创建channel实际上就是在内存中实例化了一个`hchan`的结构体，并返回一个ch指针，我们使用过程中channel在函数之间的传递都是用的这个指针，这就是为什么函数传递中无需使用channel的指针，而直接用channel就行了，因为channel本身就是一个指针。
 
@@ -95,7 +95,7 @@ ch := make(chan int, 3)
 
 每一步的操作总结为动态图为：(发送过程)
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/send_single.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/send_single.gif)
 
 所以不难看出，Go中那句经典的话：`Do not communicate by sharing memory; instead, share memory by communicating.`的具体实现就是利用channel把数据从一端copy到了另一端！
 
@@ -119,41 +119,41 @@ ch <- 1
 ch <- 1
 ```
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block.png)
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block1.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block1.png)
 
 此时channel缓冲区已经满了，这个时候G1正在正常运行,当再次进行send操作(ch<-1)的时候，会主动调用Go的调度器,让G1等待，并从让出M，让其他G去使用
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block2.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block2.png)
 
 同时G1也会被抽象成含有G1指针和send元素的`sudog`结构体保存到hchan的`sendq`中等待被唤醒。
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_blok3.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_blok3.gif)
 
 那么，G1什么时候被唤醒呢？这个时候G2隆重登场。
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block4.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block4.png)
 
 G2执行了recv操作`p := <-ch`，于是会发生以下的操作：
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block5.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block5.gif)
 
 G2从缓存队列中取出数据，channel会将等待队列中的G1推出，将G1当时send的数据推到缓存中，然后调用Go的scheduler，唤醒G1，并把G1放到可运行的Goroutine队列中。
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block6.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block6.gif)
 
 ### 假如channel为空时，先进行执行recv操作的G2会怎么样？
 
 你可能会顺着以上的思路反推。首先：
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block7_1.png)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block7_1.png)
 
 这个时候G2会主动调用Go的调度器,让G2等待，并从让出M，让其他G去使用。
 
 G2还会被抽象成含有G2指针和recv空元素的`sudog`结构体保存到hchan的`recvq`中等待被唤醒
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block7.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block7.gif)
 
 此时恰好有个goroutine G1开始向channel中推送数据 `ch <- 1`。
 
@@ -167,13 +167,13 @@ G1并没有锁住channel，然后没有将数据放到缓存中，而是直接�
 
 之后的事情显而易见：
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block8.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block8.gif)
 
-![image.png](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/image.png)
+![image.png](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/image.png)
 
 
 
-![image](http://beangogo.cn/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block9.gif)
+![image](http://taoey.github.io/assets/images/artcles/2021-2-4-golang_channel.assets/hchan_block9.gif)
 
 
 

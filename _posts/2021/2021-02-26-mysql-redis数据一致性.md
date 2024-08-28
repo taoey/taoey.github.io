@@ -45,7 +45,7 @@ def write(key, value):
 
 删除失败之后的重删机制：
 
-![image-20210304173633070](http://beangogo.cn/assets/images/artcles/2021-02-26-mysql-redis数据一致性.assets/image-20210304173633070.png)
+![image-20210304173633070](http://taoey.github.io/assets/images/artcles/2021-02-26-mysql-redis数据一致性.assets/image-20210304173633070.png)
 
 然而，该方案有一个缺点，对业务线代码造成大量的侵入
 
@@ -53,7 +53,7 @@ def write(key, value):
 
 ## 策略二、binlog+canal+MQ
 
-![img](http://beangogo.cn/assets/images/artcles/2021-02-26-mysql-redis数据一致性.assets/1049928-78c959e0e4696330.webp)
+![img](http://taoey.github.io/assets/images/artcles/2021-02-26-mysql-redis数据一致性.assets/1049928-78c959e0e4696330.webp)
 
 MySQL binlog增量订阅消费+消息队列+增量数据更新到redis
 

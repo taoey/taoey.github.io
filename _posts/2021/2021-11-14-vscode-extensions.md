@@ -12,7 +12,7 @@ keywords: #vscode
 
 
 ## 1、Paste Image
-<img src="http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-38-49.png" style="zoom:25%;" />
+<img src="http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-38-49.png" style="zoom:25%;" />
 
 在vscode的markdown中黏贴图片更方便，可以用于代替Typora
 黏贴快捷键：option+command+c
@@ -22,7 +22,7 @@ keywords: #vscode
 {
   "pasteImage.basePath": "${projectRoot}",
   "pasteImage.path": "${projectRoot}/assets/images/artcles/${currentFileNameWithoutExt}.assets",
-  "pasteImage.prefix": "http://beangogo.cn/"
+  "pasteImage.prefix": "http://taoey.github.io/"
 }
 ```
 
@@ -31,31 +31,31 @@ keywords: #vscode
 ### 2.1 Git Graph
 用于查看git提交记录图
 
-<img src="http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-41-53.png" style="zoom:33%;" />
+<img src="http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-41-53.png" style="zoom:33%;" />
 
 ### 2.2 GitLens
 主要用于显示当前行的最近提交
 
-<img src="http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-45-24.png" style="zoom:33%;" />
+<img src="http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-45-24.png" style="zoom:33%;" />
 
 ### 2.3 Git History
-<img src="http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-46-03.png" style="zoom:33%;" />
+<img src="http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-11-14-15-46-03.png" style="zoom:33%;" />
 
 
 ## 3、Project Manager
 可以便捷的进行项目文件夹的管理
-![](http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-17-27.png)
+![](http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-17-27.png)
 
 
 ## 4、主题相关
 个人感觉 One Dark Pro 这个主题很不错
-![](http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-19-03.png)
+![](http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-19-03.png)
 
 注意要选择：flat 这个选项，整体更加舒服
-![](http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-19-57.png)
+![](http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-19-57.png)
 
 配色展示：
-![](http://beangogo.cn/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-22-19.png)
+![](http://taoey.github.io/assets/images/artcles/2021-11-14-vscode-extensions.assets/2021-12-26-17-22-19.png)
 
 ## 总配置
 
@@ -81,6 +81,6 @@ keywords: #vscode
     "git.ignoreLegacyWarning": true,
     "pasteImage.basePath": "${projectRoot}",
     "pasteImage.path": "${projectRoot}/assets/images/artcles/${currentFileNameWithoutExt}.assets",
-    "pasteImage.prefix": "http://beangogo.cn/",
+    "pasteImage.prefix": "http://taoey.github.io/",
 }
 ```

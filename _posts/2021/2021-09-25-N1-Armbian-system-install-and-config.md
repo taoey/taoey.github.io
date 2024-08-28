@@ -303,7 +303,7 @@ apt-get install mysql
 
 下载红框中的版本，之后按照步骤操作即可
 
-![img](http://beangogo.cn/assets/images/artcles/2021-09-25-N1-Armbian系统安装配置.assets/1633228917814-f4794779-6aaa-4488-a632-88efdab5b543.png)
+![img](http://taoey.github.io/assets/images/artcles/2021-09-25-N1-Armbian系统安装配置.assets/1633228917814-f4794779-6aaa-4488-a632-88efdab5b543.png)
 
 
 

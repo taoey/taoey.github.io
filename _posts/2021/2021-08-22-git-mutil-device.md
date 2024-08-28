@@ -21,5 +21,5 @@ keywords: git,跨平台
 
 解决办法也是比较简单，按照如图所示进行操作即可，即修改git配置的filemode，改为false即可，此办法实测可用。
 
-![image-20210822204031033](http://beangogo.cn/assets/images/artcles/2021-08-22-跨平台git使用.assets/image-20210822204031033.png)
+![image-20210822204031033](http://taoey.github.io/assets/images/artcles/2021-08-22-跨平台git使用.assets/image-20210822204031033.png)
 
