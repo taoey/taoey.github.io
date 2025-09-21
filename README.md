@@ -1,5 +1,16 @@
-### git
+写文章步骤：
+1.obsidian创建文章进行编写
+2.使用obsidian-git插件进行提交
+3.替换图片链接：`http://taoey.github.io/assets`   --> `http://taoey.github.io/assets`
 
+注意：【使用wiki链接】一定要关闭，保障使用的是markdown格式的链接
+http://taoey.github.io/assets/images/artcles/README.assets/IMG-20250921162354027.png)
+
+
+
+---
+
+### git
 1. 2021-08-22 [跨平台git使用问题：文件异常变更](http://taoey.github.io/2021/08/22/跨平台git使用/)
 
 ### golang

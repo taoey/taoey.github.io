@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "28915069be0b2be0",
+        "id": "e47a9c9ddf0a3f94",
         "type": "tabs",
         "children": [
           {
-            "id": "3372b3b8fbbc1afe",
+            "id": "978f9b696935360f",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "image",
               "state": {
-                "aFile": ".gitignore 2",
-                "bFile": ".gitignore 2",
-                "aRef": ""
+                "file": "assets/images/artcles/README.assets/IMG-20250921162354027.png"
               },
-              "icon": "diff",
-              "title": "Diff: .gitignore 2"
+              "icon": "lucide-image",
+              "title": "IMG-20250921162354027"
             }
           }
         ]
@@ -95,12 +93,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "assets/images/artcles/README.assets/IMG-20250921162354027.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "IMG-20250921162354027 的大纲"
             }
           },
           {
@@ -108,9 +107,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "assets/images/artcles/README.assets/IMG-20250921162354027.png"
+              },
               "icon": "lucide-info",
-              "title": "笔记属性"
+              "title": "IMG-20250921162354027的笔记属性"
             }
           },
           {
@@ -294,13 +295,25 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3372b3b8fbbc1afe",
+  "active": "978f9b696935360f",
   "lastOpenFiles": [
     "_posts/2025/2025-09-21-测试.md",
+    "_posts/2025/2025-09-21.md",
+    "assets/images/artcles/README.assets/IMG-20250921162354027.png",
+    "README.md",
+    "assets/images/artcles/README.assets",
+    "_posts/2021/2021-2-4-计算机网络汇总.md",
+    "_posts/2023/2023-05-01-go-test-5-http.md",
+    "_posts/2023/2023-05-20-通用DB扫表导出数据.md",
+    "_posts/2023/2023-05-01-go-test-1-utest.md",
+    "_posts/2023/2023-02-23-protoc-install.md",
+    "_posts/2023/2023-01-02-监控大盘方案.md",
+    "_posts/2023/2023-01-01-android-linux.md",
+    "_posts/2024/2024-06-23-人生效率手册重塑升级版.md",
+    "_posts/2024/2024-03-27-通用golang文本并发处理脚本.md",
     "assets/images/artcles/2025-09-21-测试.assets",
     "assets/images/artcles/2025-09-21-测试.assets/IMG-20250921161218479.png",
     "assets/images/artcles/2025-09-21-测试.assets/IMG-20250921160706171.png",
-    "_posts/2023/2023-01-01-android-linux.md",
     "_posts/2021/2021-03-05-golang-RAM-escape.md",
     "_wiki/2021/2021-05-29-孔乙己的码农生活.md",
     "_posts/2021/2021-02-20-并发和并行.md",
@@ -319,29 +332,17 @@
     "_wiki/2021/2021-10-04-请回答1988.md",
     "_wiki/2021/2021-06-19-幽默的生活.md",
     "_wiki/2015/2015-02-16-活着读后感.md",
-    "_wiki/2015/2015-05-05-清心决.md",
     "5-每日记录/2025/20250921",
     "5-每日记录/2025/20250921/IMG-20250921153928443.png",
     "Pasted image 20250921153840.png",
-    "5-每日记录/2025/20250921.md",
-    "2-健康管理/未命名.md",
-    "5-每日记录/模板/日记模板-20250913.md",
-    "5-每日记录/2025/20250523-睡眠的重要性.md",
-    "5-每日记录/未命名.md",
-    "5-每日记录/2025/日记-2025/2025-09-21.md",
     "5-每日记录/2025/日记-2025",
     "5-每日记录/模板",
-    "未命名.md",
-    "2025-09-21.md",
     "未命名.canvas",
-    "收藏.md",
     "assets/收藏.assets/IMG-20250828022910970.png",
     "5-每日记录/2023/2023.csv",
     "4-历史人生/2023/2023.csv",
     "4-历史人生/2023",
-    "my-life",
     "assets/简介.assets/IMG-20250921124727143.png",
-    "assets/2025-07-28-武大图书馆性骚扰事件.assets/IMG-20250921124728034.png",
     "4-历史人生/未命名.canvas",
     "后端知识库/工具杂项/未命名.canvas"
   ]
