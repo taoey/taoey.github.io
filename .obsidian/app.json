@@ -2,5 +2,6 @@
   "alwaysUpdateLinks": true,
   "newLinkFormat": "absolute",
   "promptDelete": false,
-  "trashOption": "local"
+  "trashOption": "local",
+  "useMarkdownLinks": true
 }

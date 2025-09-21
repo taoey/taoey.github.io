@@ -13,12 +13,12 @@
             "state": {
               "type": "split-diff-view",
               "state": {
-                "aFile": "_posts/template.md",
-                "bFile": "_posts/template.md",
+                "aFile": ".gitignore 2",
+                "bFile": ".gitignore 2",
                 "aRef": ""
               },
               "icon": "diff",
-              "title": "Diff: template"
+              "title": "Diff: .gitignore 2"
             }
           }
         ]
@@ -298,13 +298,15 @@
   "lastOpenFiles": [
     "_posts/2025/2025-09-21-测试.md",
     "assets/images/artcles/2025-09-21-测试.assets",
+    "assets/images/artcles/2025-09-21-测试.assets/IMG-20250921161218479.png",
+    "assets/images/artcles/2025-09-21-测试.assets/IMG-20250921160706171.png",
+    "_posts/2023/2023-01-01-android-linux.md",
     "_posts/2021/2021-03-05-golang-RAM-escape.md",
     "_wiki/2021/2021-05-29-孔乙己的码农生活.md",
     "_posts/2021/2021-02-20-并发和并行.md",
     "_wiki/2020/2020-05-12-pandownload-think.md",
     "_posts/template.md",
     "assets/images/artcles/20250921-测试.assets",
-    "assets/images/artcles/2025-09-21-测试.assets/IMG-20250921160706171.png",
     "assets/images/screenshots/home.png",
     "_wiki/2023/2023-04-15-流浪地球资料收集.md",
     "_wiki/template.md",
@@ -334,14 +336,12 @@
     "未命名.canvas",
     "收藏.md",
     "assets/收藏.assets/IMG-20250828022910970.png",
-    "README.md",
     "5-每日记录/2023/2023.csv",
     "4-历史人生/2023/2023.csv",
     "4-历史人生/2023",
     "my-life",
     "assets/简介.assets/IMG-20250921124727143.png",
     "assets/2025-07-28-武大图书馆性骚扰事件.assets/IMG-20250921124728034.png",
-    "Pasted image 20250728005027.png",
     "4-历史人生/未命名.canvas",
     "后端知识库/工具杂项/未命名.canvas"
   ]
