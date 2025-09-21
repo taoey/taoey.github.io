@@ -1,0 +1,432 @@
+{
+  "main": {
+    "id": "4cc430046cc2379d",
+    "type": "split",
+    "children": [
+      {
+        "id": "5ed85eb939a96c6a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "80dff2c5eff2c296",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2025-09-15.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-09-15"
+            }
+          },
+          {
+            "id": "2acba4d416d39863",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "健身经验.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "健身经验"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "398cb6c41957644b",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "c452b4c9040b7a0d",
+        "type": "leaf",
+        "state": {
+          "type": "file-explorer",
+          "state": {
+            "sortOrder": "alphabetical",
+            "autoReveal": false
+          },
+          "icon": "lucide-folder-closed",
+          "title": "文件列表"
+        }
+      },
+      {
+        "id": "09a62616460f51cd",
+        "type": "leaf",
+        "state": {
+          "type": "search",
+          "state": {
+            "query": "出租车",
+            "matchingCase": false,
+            "explainSearch": false,
+            "collapseAll": true,
+            "extraContext": false,
+            "sortOrder": "alphabetical"
+          },
+          "icon": "lucide-search",
+          "title": "搜索"
+        }
+      },
+      {
+        "id": "11ba9c122b545af6",
+        "type": "leaf",
+        "state": {
+          "type": "tag",
+          "state": {
+            "sortOrder": "frequency",
+            "useHierarchy": true,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-tags",
+          "title": "标签"
+        }
+      },
+      {
+        "id": "e0d0909a64c38cec",
+        "type": "leaf",
+        "state": {
+          "type": "bookmarks",
+          "state": {},
+          "icon": "lucide-bookmark",
+          "title": "书签"
+        }
+      },
+      {
+        "id": "8789142303a35e61",
+        "type": "leaf",
+        "state": {
+          "type": "all-properties",
+          "state": {
+            "sortOrder": "frequency",
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-archive",
+          "title": "添加笔记属性"
+        }
+      }
+    ],
+    "currentTab": 0
+  },
+  "right": {
+    "id": "0305e78280e23ade",
+    "type": "mobile-drawer",
+    "children": [
+      {
+        "id": "e2202a9963f3b0dd",
+        "type": "leaf",
+        "state": {
+          "type": "backlink",
+          "state": {
+            "file": "2-后端知识库/2-mysql必会小册/性能优化/索引/聚集索引和非聚集索引.md",
+            "collapseAll": false,
+            "extraContext": false,
+            "sortOrder": "alphabetical",
+            "showSearch": false,
+            "searchQuery": "",
+            "backlinkCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "lucide-ghost",
+          "title": "backlink"
+        }
+      },
+      {
+        "id": "ad40006228bfb6ff",
+        "type": "leaf",
+        "state": {
+          "type": "outgoing-link",
+          "state": {
+            "file": "健身经验.md",
+            "linksCollapsed": false,
+            "unlinkedCollapsed": true
+          },
+          "icon": "links-going-out",
+          "title": "出链"
+        }
+      },
+      {
+        "id": "fcbdcfa67b66c871",
+        "type": "leaf",
+        "state": {
+          "type": "outline",
+          "state": {
+            "file": "健身经验.md",
+            "followCursor": false,
+            "showSearch": false,
+            "searchQuery": ""
+          },
+          "icon": "lucide-list",
+          "title": "大纲"
+        }
+      },
+      {
+        "id": "789a5de32f085376",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "ed28b6242f24156b",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "101d8164f8bb987b",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "8aea0ca703048501",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "3c5a0fca9f33f096",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "1a009f2c3b4cfe42",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "74f5248b3ad98edd",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "7d5ffcf5970f91fe",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "1ddabbf00ab00cdc",
+        "type": "leaf",
+        "state": {
+          "type": "advanced-tables-toolbar",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "advanced-tables-toolbar"
+        }
+      },
+      {
+        "id": "f55f3336aae57f65",
+        "type": "leaf",
+        "state": {
+          "type": "calendar",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "calendar"
+        }
+      },
+      {
+        "id": "8e5110cfb7475e9c",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "6e5fa96fdc7857c7",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "9df9bfb4ce8ec553",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "f8434f203605a7eb",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "b11e644a32bcc917",
+        "type": "leaf",
+        "state": {
+          "type": "ob_comments",
+          "state": {},
+          "icon": "lucide-ghost",
+          "title": "ob_comments"
+        }
+      },
+      {
+        "id": "48ae93953415142c",
+        "type": "leaf",
+        "state": {
+          "type": "chronology-calendar-view",
+          "state": {},
+          "icon": "clock",
+          "title": "Chronology"
+        }
+      },
+      {
+        "id": "595ad8f7c90ae113",
+        "type": "leaf",
+        "state": {
+          "type": "chronology-calendar-view",
+          "state": {},
+          "icon": "clock",
+          "title": "Chronology"
+        }
+      },
+      {
+        "id": "4ea959d35b7467ae",
+        "type": "leaf",
+        "state": {
+          "type": "chronology-calendar-view",
+          "state": {},
+          "icon": "clock",
+          "title": "Chronology"
+        }
+      },
+      {
+        "id": "cac6e0643dce2ae7",
+        "type": "leaf",
+        "state": {
+          "type": "chronology-calendar-view",
+          "state": {},
+          "icon": "clock",
+          "title": "Chronology"
+        }
+      }
+    ],
+    "currentTab": 18
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:创建新数据库": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "random-note:开始漫游笔记": false,
+      "workspaces:管理工作区布局": false,
+      "obsidian-kanban:创建新看板": false,
+      "excel:创建 Excel 文件": false,
+      "chronology:Open Chronology": false
+    }
+  },
+  "active": "2acba4d416d39863",
+  "lastOpenFiles": [
+    "2025-09-15.md",
+    "健身经验.md",
+    "收藏.md",
+    "2-健康管理/2-健康日记/腰突康复日记.md",
+    "assets/简介.assets/IMG-20250912120740466.png",
+    "4-历史人生/2025/2025-07-26-旺仔小乔事态发酵.md",
+    "assets/收藏.assets/IMG-20250828022910970.png",
+    "账号管理/vp.md",
+    "assets/2025-07-28-武大图书馆性骚扰事件.assets/IMG-20250728231502196.png",
+    "周记/2025/2025-w31.md",
+    "4-历史人生/2025/2025-07-20-天水幼儿园铅中毒事件.md",
+    "4-历史人生/2025.md",
+    "文章收集/2025-07/去责任化解构.md",
+    "文章收集/2025-07/关于买车的一些经验.md",
+    "腰突康复日记.md",
+    "assets/脱颖而出的秘密.assets/IMG-20250727002059505.png",
+    "assets/思维逻辑框架.assets/IMG-20250727002059514.jpg",
+    "assets/关于买车的一些经验.assets/IMG-20250727002043405.png",
+    "assets/去责任化解构.assets/IMG-20250727002043378.jpg",
+    "assets/韩国全斗焕.assets/IMG-20250727002043415.png",
+    "文章收集/2025-07/思维逻辑框架.md",
+    "文章收集/2025-07/脱颖而出的秘密.md",
+    "文章收集/2025-07/韩国全斗焕.md",
+    "文章收集/2025-07/电影.md",
+    "文章收集/2025-07",
+    "文章收集",
+    "关于买车的一些经验.md",
+    "脱颖而出的秘密.md",
+    "韩国全斗焕.md",
+    "去责任化解构.md",
+    "assets/脱颖而出的秘密.assets",
+    "assets/脱颖而出的秘密.assets/IMG-20250719231828823.png",
+    "思维逻辑框架.md",
+    "assets/思维逻辑框架.assets",
+    "assets/思维逻辑框架.assets/IMG-20250719231519020.jpg",
+    "assets/韩国全斗焕.assets",
+    "assets/关于买车的一些经验.assets",
+    "assets/去责任化解构.assets",
+    "assets/去责任化.assets",
+    "未命名",
+    "资料收集",
+    "腰突康复日记.sync-conflict-20250714-225717-LND44XY.md",
+    "电影.md",
+    "README.md",
+    "健康管理/2-健康日记/2025/20250314-腰部.md",
+    "小记/未命名.md"
+  ]
+}

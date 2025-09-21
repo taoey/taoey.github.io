@@ -1,0 +1,6 @@
+{
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "absolute",
+  "promptDelete": false,
+  "trashOption": "local"
+}

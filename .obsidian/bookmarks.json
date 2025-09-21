@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "type": "folder",
+      "ctime": 1699409330215,
+      "path": "2-编程知识库/4-python/pandas"
+    },
+    {
+      "type": "folder",
+      "ctime": 1720882802385,
+      "path": "2-编程知识库/2-mysql必会小册",
+      "title": "mysql"
+    },
+    {
+      "type": "folder",
+      "ctime": 1720882816298,
+      "path": "2-编程知识库/1-golang",
+      "title": "golang"
+    },
+    {
+      "type": "url",
+      "ctime": 1739793327736,
+      "url": "https://zhida.zhihu.com/search/3647633808077818458",
+      "title": "知乎AI"
+    },
+    {
+      "type": "file",
+      "ctime": 1739932397250,
+      "path": "2-编程知识库/后端问题积累.md"
+    },
+    {
+      "type": "group",
+      "ctime": 1739945473901,
+      "items": [
+        {
+          "type": "url",
+          "ctime": 1739944222010,
+          "url": "https://www.cnblogs.com/souyunku/p/15633392.html",
+          "title": "MySQL面试题"
+        }
+      ],
+      "title": "面试"
+    },
+    {
+      "type": "file",
+      "ctime": 1740973188195,
+      "path": "周记/2025/2025-w09.md"
+    }
+  ]
+}
