@@ -11,15 +11,14 @@
             "id": "3372b3b8fbbc1afe",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "_posts/2025/20250921-测试.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
+                "aFile": "_posts/template.md",
+                "bFile": "_posts/template.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "20250921-测试"
+              "icon": "diff",
+              "title": "Diff: template"
             }
           }
         ]
@@ -64,7 +63,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"date\"]",
+                "query": "wxurl",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -96,13 +95,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2025/20250921-测试.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "20250921-测试 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -110,11 +108,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "_posts/2025/20250921-测试.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "20250921-测试的笔记属性"
+              "title": "笔记属性"
             }
           },
           {
@@ -278,7 +274,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 523.5
+    "width": 428.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -300,9 +296,16 @@
   },
   "active": "3372b3b8fbbc1afe",
   "lastOpenFiles": [
-    "assets/images/screenshots/home.png",
-    "_posts/2025/20250921-测试.md",
+    "_posts/2025/2025-09-21-测试.md",
+    "assets/images/artcles/2025-09-21-测试.assets",
+    "_posts/2021/2021-03-05-golang-RAM-escape.md",
+    "_wiki/2021/2021-05-29-孔乙己的码农生活.md",
+    "_posts/2021/2021-02-20-并发和并行.md",
+    "_wiki/2020/2020-05-12-pandownload-think.md",
     "_posts/template.md",
+    "assets/images/artcles/20250921-测试.assets",
+    "assets/images/artcles/2025-09-21-测试.assets/IMG-20250921160706171.png",
+    "assets/images/screenshots/home.png",
     "_wiki/2023/2023-04-15-流浪地球资料收集.md",
     "_wiki/template.md",
     "_wiki/sitmap.md",
@@ -313,7 +316,6 @@
     "_wiki/解忧杂货店/2022年03月08日.md",
     "_wiki/2021/2021-10-04-请回答1988.md",
     "_wiki/2021/2021-06-19-幽默的生活.md",
-    "_wiki/2020/2020-05-12-pandownload-think.md",
     "_wiki/2015/2015-02-16-活着读后感.md",
     "_wiki/2015/2015-05-05-清心决.md",
     "5-每日记录/2025/20250921",
@@ -333,20 +335,13 @@
     "收藏.md",
     "assets/收藏.assets/IMG-20250828022910970.png",
     "README.md",
-    "健身经验.md",
-    "账号管理/vp.md",
-    "账号管理/vp 2.md",
     "5-每日记录/2023/2023.csv",
     "4-历史人生/2023/2023.csv",
     "4-历史人生/2023",
     "my-life",
-    "tmp.csv",
-    "tg_common_bot/2023.csv",
     "assets/简介.assets/IMG-20250921124727143.png",
     "assets/2025-07-28-武大图书馆性骚扰事件.assets/IMG-20250921124728034.png",
     "Pasted image 20250728005027.png",
-    "e928994872aa855cfc5ba7cc305bef6d_MD5.jpg",
-    "183af4e405df7c90ae3d03d8cad9cd01_MD5.png",
     "4-历史人生/未命名.canvas",
     "后端知识库/工具杂项/未命名.canvas"
   ]
