@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e47a9c9ddf0a3f94",
+        "id": "6b375bc527d60eb7",
         "type": "tabs",
         "children": [
           {
-            "id": "978f9b696935360f",
+            "id": "e951056b469c539d",
             "type": "leaf",
             "state": {
-              "type": "image",
-              "state": {
-                "file": "assets/images/artcles/README.assets/IMG-20250921162354027.png"
-              },
-              "icon": "lucide-image",
-              "title": "IMG-20250921162354027"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
             }
           }
         ]
@@ -93,13 +91,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "assets/images/artcles/README.assets/IMG-20250921162354027.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "IMG-20250921162354027 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -107,11 +104,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "assets/images/artcles/README.assets/IMG-20250921162354027.png"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "IMG-20250921162354027的笔记属性"
+              "title": "笔记属性"
             }
           },
           {
@@ -295,14 +290,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "978f9b696935360f",
+  "active": "e951056b469c539d",
   "lastOpenFiles": [
+    "README.md",
+    "assets/images/artcles/README.assets/IMG-20250921163002874.png",
+    "_posts/2021/2021-2-4-计算机网络汇总.md",
+    "assets/images/artcles/README.assets/IMG-20250921162354027.png",
     "_posts/2025/2025-09-21-测试.md",
     "_posts/2025/2025-09-21.md",
-    "assets/images/artcles/README.assets/IMG-20250921162354027.png",
-    "README.md",
     "assets/images/artcles/README.assets",
-    "_posts/2021/2021-2-4-计算机网络汇总.md",
     "_posts/2023/2023-05-01-go-test-5-http.md",
     "_posts/2023/2023-05-20-通用DB扫表导出数据.md",
     "_posts/2023/2023-05-01-go-test-1-utest.md",
@@ -342,7 +338,6 @@
     "5-每日记录/2023/2023.csv",
     "4-历史人生/2023/2023.csv",
     "4-历史人生/2023",
-    "assets/简介.assets/IMG-20250921124727143.png",
     "4-历史人生/未命名.canvas",
     "后端知识库/工具杂项/未命名.canvas"
   ]
